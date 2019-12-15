@@ -367,8 +367,10 @@ body {
   font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
   line-height: 1.5;
   color: #333;
-  background-color: #fff;
-  min-height: 100%
+  /* background-color:#fff; */
+  min-height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('/images/bq.jpg') no-repeat 0% 0%/ cover;
 }
 
 article,
@@ -929,14 +931,17 @@ html {
 }
 
 .left-col {
-  background: #fff;
-  width: 300px;
-  position: fixed;
-  opacity: 1;
-  transition: all .2s ease-in;
-  height: 100%;
-  z-index: 999
-}
+  /* background: #fff; */
+   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+   url('/images/background.jpg') no-repeat 0% 20%/ cover;
+   width:300px;
+   position:fixed;
+   opacity:1;
+   transition:all .3s ease-in;
+   -ms-transition: all .3s ease-in;
+   height:100%;
+   z-index:999
+   }
 
 .left-col .overlay {
   width: 100%;
@@ -958,7 +963,7 @@ html {
 }
 
 .left-col #header a {
-  color: #696969
+  color:#333333
 }
 
 .left-col #header a:hover {
@@ -967,7 +972,7 @@ html {
 
 .left-col #header .header-subtitle {
   text-align: center;
-  color: #999;
+  color:#9966CC;
   font-size: 14px;
   line-height: 25px;
   overflow: hidden;
@@ -2182,11 +2187,10 @@ pre .id {
 
 .article {
   margin: 30px;
-  position: relative;
   border: 1px solid #ddd;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  background: #fff;
+  background: rgba(255, 255, 255, .5);
   transition: all .2s ease-in
 }
 
