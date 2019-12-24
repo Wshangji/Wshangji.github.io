@@ -16,7 +16,7 @@
 <meta property="og:description" content="十个二分九个错,二分虽然它的思想比较容易理解，但写出一个没有bug的二分，着实有些难受">
 <meta property="og:image" content="http:&#x2F;&#x2F;www.cppblog.com&#x2F;images&#x2F;cppblog_com&#x2F;guogangj&#x2F;ds_binarysearch.png">
 <meta property="article:published_time" content="2019-12-20T01:02:42.000Z">
-<meta property="article:modified_time" content="2019-12-20T01:30:46.912Z">
+<meta property="article:modified_time" content="2019-12-24T07:05:01.420Z">
 <meta property="article:author" content="shamero">
 <meta property="article:tag" content="查找">
 <meta property="article:tag" content="java">
@@ -214,6 +214,20 @@ var _hmt = _hmt || [];
 <p>二分法查找的时间复杂度O(logn),且不需要额外的空间</p>
 <h4 id="二分图解"><a href="#二分图解" class="headerlink" title="二分图解"></a>二分图解</h4><p><img src="http://www.cppblog.com/images/cppblog_com/guogangj/ds_binarysearch.png" alt="Image 二分查找"></p>
 <h3 id="传统二分"><a href="#传统二分" class="headerlink" title="传统二分"></a>传统二分</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (nums[len - <span class="number">1</span>] &lt; target) &#123;</span><br><span class="line">            <span class="keyword">return</span> len;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">// 等于的情况最简单，我们应该放在第 1 个分支进行判断</span></span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                <span class="comment">// 题目要我们返回大于或者等于目标值的第 1 个数的索引</span></span><br><span class="line">                <span class="comment">// 此时 mid 一定不是所求的左边界，</span></span><br><span class="line">                <span class="comment">// 此时左边界更新为 mid + 1</span></span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 既然不会等于，此时 nums[mid] &gt; target</span></span><br><span class="line">                <span class="comment">// mid 也一定不是所求的右边界</span></span><br><span class="line">                <span class="comment">// 此时右边界更新为 mid - 1</span></span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 注意：一定得返回左边界 left，</span></span><br><span class="line">        <span class="comment">// 理由是对于 [1,3,5,6]，target = 2，返回大于等于 target 的第 1 个数的索引，此时应该返回 1</span></span><br><span class="line">        <span class="comment">// 在上面的 while (left &lt;= right) 退出循环以后，right &lt; left，right = 0 ，left = 1</span></span><br><span class="line">        <span class="comment">// 根据题意应该返回 left，</span></span><br><span class="line">        <span class="comment">// 如果题目要求你返回小于等于 target 的所有数里最大的那个索引值，应该返回 right</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p><strong>取中位数索引的代码有问题</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = (left + right) / <span class="number">2</span> ;</span><br></pre></td></tr></table></figure>
+<p>这也不能说不对，但是如果当<code>left</code>和<code>right</code>都非常大的时候，那么<code>left+right</code>就很有可能会超过int类型能表示的最大范围，及整型溢出，这样就会缩小数据的处理范围，可以写成这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span> ;</span><br></pre></td></tr></table></figure>
+<p>事实上，<code>int mid = left + (right - left) / 2</code>在<code>right</code>很大、<code>left</code>是负数且很小的时候，<code>right - left</code>也有可能超过int类型能表示的最范围，只不过一般情况下<code>left</code>和<code>right</code>表示的是数组索引值<code>left</code>是非负数，因此<code>right - left</code>溢出的可能性很小<br>所以使用“左边界索引 + 右边界索引”，然后“无符号右移 1 位”是推荐的写法，计算机的处理速度也会更快</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span> ;</span><br></pre></td></tr></table></figure>
+
+<p><strong>返回条件的问题</strong></p>
+<p>循环可以进行的条件写成<code>while (left &lt;= right)</code>时，在退出循环的时候，需要考虑返回<code>left</code>还是<code>right</code>，稍不注意，就容易出错<br>或许，我们可以回避这个问题^_^</p>
+<h3 id="改良二分"><a href="#改良二分" class="headerlink" title="改良二分"></a>改良二分</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>首先我们把循环条件改为<code>while(left &lt; right)</code>,那么在退出循环的时候，一定有<code>left=right</code>成立，所以我们返回<code>left</code>或<code>right</code>都可以了<br>或许你可能会有一个疑问，退出循环的时候还有一个值没有判断啊(退出循环时left或right的索引值)<br>木有关系滴，那就退出循环来看，经过分析，甚至都不用看就能确定他是目标值<br>更深层次的思想是“夹逼法”或者可以说是“排除法”</p>
+<p>其实，二分排除的过程中就是将区间不断“夹逼”的过程，在这过程中，不断排除一半的区间，从而加快查找速度</p>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -350,7 +364,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是二分"><span class="toc-number">1.</span> <span class="toc-text">什么是二分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二分查找的思路如下"><span class="toc-number">1.1.</span> <span class="toc-text">二分查找的思路如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分图解"><span class="toc-number">1.2.</span> <span class="toc-text">二分图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统二分"><span class="toc-number">2.</span> <span class="toc-text">传统二分</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是二分"><span class="toc-number">1.</span> <span class="toc-text">什么是二分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二分查找的思路如下"><span class="toc-number">1.1.</span> <span class="toc-text">二分查找的思路如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分图解"><span class="toc-number">1.2.</span> <span class="toc-text">二分图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统二分"><span class="toc-number">2.</span> <span class="toc-text">传统二分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分析"><span class="toc-number">2.1.</span> <span class="toc-text">分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改良二分"><span class="toc-number">3.</span> <span class="toc-text">改良二分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本思想"><span class="toc-number">3.1.</span> <span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考代码"><span class="toc-number">3.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -484,11 +498,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color3">查找</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,7 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">查找</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,10 +539,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
             <div class="clearfix"></div>
