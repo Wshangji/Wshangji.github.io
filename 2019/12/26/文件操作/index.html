@@ -6,13 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 动态规划 | KAKU日常</title>
+  <title>C/C++之文件操作 | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="KAKU日常">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&#x2F;index.html">
+  <meta name="description" content="C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C&#x2F;C++之文件操作">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;26&#x2F;%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
+<meta property="og:description" content="C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体">
+<meta property="article:published_time" content="2019-12-26T13:50:24.000Z">
+<meta property="article:modified_time" content="2019-12-27T07:21:14.073Z">
 <meta property="article:author" content="shamero">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
@@ -177,36 +183,144 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-文件操作" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/10/%E5%8A%A8%E8%A7%84%E7%9A%84%E5%88%9D%E7%BA%A7%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2019-11-10T10:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/10/%E5%8A%A8%E8%A7%84%E7%9A%84%E5%88%9D%E7%BA%A7%E7%90%86%E8%A7%A3/">动规的初级理解</a>
+    <h1 class="article-title" itemprop="name">
+      C/C++之文件操作
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2019-12-26T13:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体</p>
+<a id="more"></a>
+<h3 id="声明文件变量"><a href="#声明文件变量" class="headerlink" title="声明文件变量"></a>声明文件变量</h3><pre><code>FILE *file;</code></pre><p>声明了一个名为file的文件指针<br>定义好一个文件指针变量后就需要初始化这个文件指针变量或者说是打开文件</p>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>打开文件通过fopen函数完成，比如：</p>
+<pre><code>file = fopen(&quot;1.text&quot;,&quot;r+&quot;);</code></pre><p>fopen函数中有两个传入参数，第一个参数是文件的名称，比如“1.txt”，要注意，如果这个文件没有和你的程序处于同一目录下，需要写入全部路径，例如   “c:\1\1.txt”；第二个参数为打开文件的方式，他可以从下面几个方式中打开 </p>
+<center> 文件的打开方式 </center>
+
+<table>
+<thead>
+<tr>
+<th>打开方式</th>
+<th>含义</th>
+<th>指定文件不存在时</th>
+<th>指定文件存在时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写方式打开文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加方式打开文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读/写方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读/写方式创建新的文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读/追加方式建立新的文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>只读方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>只写方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>追加方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾添加</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>读/写方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>读/写方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>读/追加方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,25 +330,147 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/12/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">位运算小结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文件变量"><span class="toc-number">1.</span> <span class="toc-text">声明文件变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开文件"><span class="toc-number">2.</span> <span class="toc-text">打开文件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/", 
+    sourceId: "文件操作",
+    productKey: "ture",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -264,9 +500,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

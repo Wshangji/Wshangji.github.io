@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C/C++之文件操作</title>
+    <url>/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体</p>
+<a id="more"></a>
+<h3 id="声明文件变量"><a href="#声明文件变量" class="headerlink" title="声明文件变量"></a>声明文件变量</h3><pre><code>FILE *file;</code></pre><p>声明了一个名为file的文件指针<br>定义好一个文件指针变量后就需要初始化这个文件指针变量或者说是打开文件</p>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>打开文件通过fopen函数完成，比如：</p>
+<pre><code>file = fopen(&quot;1.text&quot;,&quot;r+&quot;);</code></pre><p>fopen函数中有两个传入参数，第一个参数是文件的名称，比如“1.txt”，要注意，如果这个文件没有和你的程序处于同一目录下，需要写入全部路径，例如   “c:\1\1.txt”；第二个参数为打开文件的方式，他可以从下面几个方式中打开 </p>
+<center> 文件的打开方式 </center>
+
+<table>
+<thead>
+<tr>
+<th>打开方式</th>
+<th>含义</th>
+<th>指定文件不存在时</th>
+<th>指定文件存在时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写方式打开文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加方式打开文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读/写方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读/写方式创建新的文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读/追加方式建立新的文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>只读方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>只写方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>追加方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾添加</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>读/写方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>读/写方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>读/追加方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>位运算小结</title>
+    <url>/2019/12/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<p>位运算主要包括按位与(&amp;)、按位或(|)、按位异或(^)、取反(~)、左移(&lt;&lt;)、右移(&gt;&gt;)这几种，其中除了取反(~)以外，其他的都是二目运算符，即要求运算符左右两侧均有一个运算量</p>
+<a id="more"></a>
+<h3 id="位运算概览"><a href="#位运算概览" class="headerlink" title="位运算概览"></a>位运算概览</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>运算规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>各二进位全部左移若干位，高位丢弃，低位补0</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>各二进位全部右移若干位，对无符号数，高位补0，有符号数，各编译器处理方法不一样，有的补符号位（算术右移），有的补0（逻辑右移</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或</td>
+<td>两个位都为0时，结果才为0</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+<td>两个位都为1时，结果才为1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反</td>
+<td>0变1，1变0</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+<td>^    异或    两个位相同为0，相异为1</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分查找</title>
     <url>/2019/12/20/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<p><code>十个二分九个错</code>,二分虽然它的思想比较容易理解，但写出一个没有bug的二分，着实有些难受</p>
@@ -239,7 +392,7 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 <p>而治之。我们知道归并操作是将两个有序的数列合并到一个有序的序列，那么对于一个无序的长序列，可以把它分解为若干个有序的子</p>
 <p>序列，然后依次进行归并。如果我们说每一个数字都是单独有序的序列，那么只要把原始长序列依次分解，直到每个子序列都只有一个</p>
 <p>元素的时候，再依次把所有的序列进行归并，直到序列数为1</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7789414-2737ec30a70ff74f.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/811/format/webp" alt="alt 单向链表"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/12/623396b9f4e3a0ab.jpg" alt="alt 单向链表"></p>
 <p>综上可知：</p>
 <p>归并排序其实要做两件事：</p>
 <p>（1）“分解”——将序列每次折半划分。<br>（2）“合并”——将划分后的序列段两两合并后排序。</p>
@@ -392,8 +545,8 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 <p> _ **** 嘿嘿，慢慢玩 _</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>c++</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
