@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="KAKU日常">
 <meta property="og:description" content="C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体">
 <meta property="article:published_time" content="2019-12-26T13:50:24.000Z">
-<meta property="article:modified_time" content="2019-12-27T07:21:14.073Z">
+<meta property="article:modified_time" content="2020-01-14T12:06:11.677Z">
 <meta property="article:author" content="shamero">
 <meta property="article:tag" content="c++">
 <meta property="article:tag" content="随笔">
@@ -109,7 +109,7 @@ var _hmt = _hmt || [];
 					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2463509050&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 				
 				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-					src="//music.163.com/outchain/player?type=2&id=33911781&auto=1&height=66"></iframe>
+					src="//music.163.com/outchain/player?type=2&id=464605692&auto=1&height=66"></iframe>
 			</div>
 		</nav>
 	</header>		
@@ -208,6 +208,7 @@ var _hmt = _hmt || [];
 <h3 id="声明文件变量"><a href="#声明文件变量" class="headerlink" title="声明文件变量"></a>声明文件变量</h3><pre><code>FILE *file;</code></pre><p>声明了一个名为file的文件指针<br>定义好一个文件指针变量后就需要初始化这个文件指针变量或者说是打开文件</p>
 <h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>打开文件通过fopen函数完成，比如：</p>
 <pre><code>file = fopen(&quot;1.text&quot;,&quot;r+&quot;);</code></pre><p>fopen函数中有两个传入参数，第一个参数是文件的名称，比如“1.txt”，要注意，如果这个文件没有和你的程序处于同一目录下，需要写入全部路径，例如   “c:\1\1.txt”；第二个参数为打开文件的方式，他可以从下面几个方式中打开 </p>
+<p>正常返回：<code>被打开文件的文件指针</code><br>异常返回：<code>NULL</code></p>
 <center> 文件的打开方式 </center>
 
 <table>
@@ -290,6 +291,52 @@ var _hmt = _hmt || [];
 <td>读/追加方式创建新的二进制文件</td>
 <td>建立新文件</td>
 <td>在原有内容末尾追加</td>
+</tr>
+</tbody></table>
+<h3 id="文件关闭"><a href="#文件关闭" class="headerlink" title="文件关闭"></a>文件关闭</h3><pre><code>fclose(FILE *fp);</code></pre><p>关闭已经打开的一个名为fp的FILE文件指针</p>
+<p>正常返回：<code>0</code><br>异常返回：<code>EOF</code></p>
+<h3 id="文件的顺序读写函数"><a href="#文件的顺序读写函数" class="headerlink" title="文件的顺序读写函数"></a>文件的顺序读写函数</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>函数名</th>
+<th>适用于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符输入函数</td>
+<td>fgetc</td>
+<td>所有输入流</td>
+</tr>
+<tr>
+<td>字符输出函数</td>
+<td>fputc</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>文本行输出函数</td>
+<td>fputs</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>格式化输入函数</td>
+<td>fscanf</td>
+<td>所有输入流</td>
+</tr>
+<tr>
+<td>格式化输出函数</td>
+<td>fprintf</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>二进制输入</td>
+<td>fread</td>
+<td>文件</td>
+</tr>
+<tr>
+<td>二进制输出</td>
+<td>fwrite</td>
+<td>文件</td>
 </tr>
 </tbody></table>
 
@@ -440,7 +487,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文件变量"><span class="toc-number">1.</span> <span class="toc-text">声明文件变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开文件"><span class="toc-number">2.</span> <span class="toc-text">打开文件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文件变量"><span class="toc-number">1.</span> <span class="toc-text">声明文件变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开文件"><span class="toc-number">2.</span> <span class="toc-text">打开文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件关闭"><span class="toc-number">3.</span> <span class="toc-text">文件关闭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的顺序读写函数"><span class="toc-number">4.</span> <span class="toc-text">文件的顺序读写函数</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -480,7 +527,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2019 shamero
+        &copy; 2020 shamero
       </div>
       <div class="footer-right">
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
