@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java基础语法</title>
+    <url>/2020/01/16/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>一个Java程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。下面简要介绍一下类、对象、方法和实例变量的概念。</p>
+<a id="more"></a>
+<pre><code>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。
+
+类：类是一个模板，它描述一类对象的行为和状态。
+
+方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。
+
+实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</code></pre><p>控制台编译Java源代码(进入源码目录下)：<br>    :&gt; javac name.java<br>    :&gt; java name</p>
+<h3 id="Java名称定义格式"><a href="#Java名称定义格式" class="headerlink" title="Java名称定义格式"></a>Java名称定义格式</h3><p>· 大小写敏感：Java是大小写敏感的，及标识符大写与小写是不同<br>· 类名：对于所有类来说，类名的首字母应该大写，如果由若干单词来构成，那么每个单词首字母都应该大写<br>· 方法名：所有的方法名都应该以小写字母开头，如果方法名由若干单词构成，那么第一个首字母小写，后面每个单词的首字母大写<br>· 源文件名：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Java 是大小写敏感的），文件名的后缀为 .java。（如果文件名和类名不相同则会导致编译错误）。<br>· 主方法入口：所有的 Java 程序由 public static void main(String []args) 方法开始执行。</p>
+<h3 id="Java标识符"><a href="#Java标识符" class="headerlink" title="Java标识符"></a>Java标识符</h3><p>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<pre><code>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始
+
+首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合
+
+关键字不能用作标识符
+
+标识符是大小写敏感的
+
+合法标识符举例：age、$salary、_value、__1_value
+
+非法标识符举例：123abc、-salary</code></pre><h3 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h3><p>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
+<pre><code>访问控制修饰符 : default, public , protected, private
+
+非访问控制修饰符 : final, abstract, static, synchronized</code></pre><h3 id="Java变量"><a href="#Java变量" class="headerlink" title="Java变量"></a>Java变量</h3><p>局部变量</p>
+<p>类变量(静态变量)</p>
+<p>成员变量(非静态变量)</p>
+<h3 id="Java数组"><a href="#Java数组" class="headerlink" title="Java数组"></a>Java数组</h3><p>数组是储存在堆上的对象，可以保存多个同类型变量</p>
+<p>一维数组的定义<br>    <code>dataType[] arrayRefVar = new dataType[arraySize];</code></p>
+<p>多维数组的定义<br>    <code>dataType[][] arrayRefVar = new dataType[arraySize][arraySize];</code></p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。</p>
+<p>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在 Java 中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。</p>
+<p>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C/C++之文件操作</title>
     <url>/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体</p>
