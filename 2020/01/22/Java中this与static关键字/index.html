@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="KAKU日常">
 <meta property="og:description" content="构造方法是创建Java对象的重要途径，通过new关键字调用构造器时，构造器也确实返回该类的对象，但这个对象并不是完全由构造器负责创建。创建一个对象分为如下四步：">
 <meta property="article:published_time" content="2020-01-22T03:12:08.000Z">
-<meta property="article:modified_time" content="2020-01-22T04:29:55.950Z">
+<meta property="article:modified_time" content="2020-01-27T10:17:21.714Z">
 <meta property="article:author" content="shamero">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@ var _hmt = _hmt || [];
 <p>　　2. 执行属性值的显示初始化</p>
 <p>　　3. 执行构造方法</p>
 <p>　　4. 返回对象的地址给相关的变量</p>
-<p>　　this的本质就是“创建好的对象的地址”! 由于在构造方法调用前，对象已经创建。因此，在构造方法中也可以使用this代表“当前对象” 。</p>
+<p>　　this的本质就是”创建好的对象的地址”! 由于在构造方法调用前，对象已经创建。因此，在构造方法中也可以使用this代表“当前对象” 。</p>
 <h4 id="this最常的用法："><a href="#this最常的用法：" class="headerlink" title="this最常的用法："></a>this最常的用法：</h4><p>　　1.  在程序中产生二义性之处，应使用this来指明当前对象;普通方法中，this总是指向调用该方法的对象。构造方法中，this总是指向正要初始化的对象。</p>
 <p>　　2. 使用this关键字调用重载的构造方法，避免相同的初始化代码。但只能在构造方法中用，并且必须位于构造方法的第一句。</p>
 <p>　　3. this不能用于static方法中。</p>
