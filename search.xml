@@ -256,8 +256,8 @@ classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境�
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>c++</tag>
         <tag>随笔</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -354,8 +354,8 @@ classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境�
 <p><em>如果出现了死循环，那么就打印输出左右边界、中位数的值和目标值、分支逻辑等必要的信息，进而进行分析</em></p>
 ]]></content>
       <tags>
+        <tag>Java</tag>
         <tag>查找</tag>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -704,8 +704,8 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 <p> _ **** 嘿嘿，慢慢玩 _</p>
 ]]></content>
       <tags>
-        <tag>c++</tag>
         <tag>随笔</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
