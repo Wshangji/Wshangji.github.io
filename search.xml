@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JVM、JRE和JDK</title>
+    <url>/2020/01/30/JVM%E3%80%81JRE%E5%92%8CJDK/</url>
+    <content><![CDATA[<p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
+<a id="more"></a>
+<p><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494836063440655.png" alt="Alt Java"></p>
+<p>JVM(Java Virtual Machine)就是一个虚拟的用于执行bytecode字节码的”虚拟计算机”。他也定义了指令集、寄存器集、结构栈、垃圾收集堆、内存区域。JVM负责将Java字节码解释运行，边解释边运行，这样，速度就会受到一定的影响。</p>
+<p>不同的操作系统有不同的虚拟机。Java 虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 Java虚拟机是实现跨平台的核心机制。如图所示：<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837984812122.png" alt="Alt JVM"></p>
+<p>Java Runtime Environment (JRE) 包含：Java虚拟机、库函数、运行Java应用程序所必须的文件。</p>
+<p>Java  Development Kit (JDK)包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。</p>
+<p>JDK、JRE和JVM的关系如图所示。<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837979897855.png" alt="Alt 关系图"></p>
+<p>  ·如果只是要运行Java程序，只需要JRE就可以。JRE通常非常小，其中包含了JVM。</p>
+<p>  ·如果要开发Java程序，就需要安装JDK。</p>
+<p><strong>Java环境搭建</strong></p>
+<p>下载JDK<br>    下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<p>点击下载JDK，会出现下载列表界面。首先，点击”Accept License Agreement”，然后选择对应的版本，下载即可。</p>
+<p>注意：<br>    32位操作系统只能安装32位JDK；<br>    64位操作系统可安装32位JDK，也可以安装64位JDK。</p>
+<p>安装JDK</p>
+<p>安装过程和普通软件安装没什么区别，过程中会让你选择JDK和JRE安装目录，采用默认即可。也就是说，通通点击“下一步”就能完成安装。<br>安装成功后我们再进入JDK的安装目录，可以看到如下的结构：<br>其中：</p>
+<pre><code>bin目录是存储一些可执行的二进制文件；
+
+lib存储相关jar包；
+
+src.zip是JDK相关JAVA类的源代码。</code></pre><p><strong>环境变量Path的配置</strong><br>&emsp;&emsp;环境变量是在操作系统中一个具有特定名字的对象， 它包含了一个或者多个应用程序所将使用到的信息。</p>
+<p>&emsp;&emsp;Path是一个常见的环境变量，它告诉操作系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下寻找此程序外，还应到哪些目录下寻找。</p>
+<p>设置Parh环境变量：</p>
+<ol>
+<li><p>右键计算机——&gt;属性——&gt;高级系统设置<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838772220505.png" alt="Alt 1"></p>
+</li>
+<li><p>单击环境变量按钮<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838780549127.png" alt="Alt 2"></p>
+</li>
+<li><p>单击新建按钮，新建JAVA_HOME变量（用于说明JDK的安装目录）<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838787522279.png" alt="Alt 3"></p>
+</li>
+<li><p>修改系统环境变量Path，在最前面追加%JAVA_HOME%\bin  并以;和原路径分隔。再增加：“.;”。这是表示当前目录的意思<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838936169679.png" alt="Alt 4"></p>
+</li>
+</ol>
+<p>注意：</p>
+<pre><code>此处一定是英文分号而不是中文分号！！！
+
+classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境变量！JRE会自动搜索当前路径下的类文件及相关jar文件</code></pre>]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java中this与static关键字</title>
     <url>/2020/01/22/Java%E4%B8%ADthis%E4%B8%8Estatic%E5%85%B3%E9%94%AE%E5%AD%97/</url>
     <content><![CDATA[<p>构造方法是创建Java对象的重要途径，通过new关键字调用构造器时，构造器也确实返回该类的对象，但这个对象并不是完全由构造器负责创建。创建一个对象分为如下四步：</p>
