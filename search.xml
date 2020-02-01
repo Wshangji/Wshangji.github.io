@@ -3,7 +3,23 @@
   <entry>
     <title>python程序的基本格式</title>
     <url>/2020/01/31/python%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p><strong>恰当的空格，缩进问题</strong></p>
+<p>　　 (1) 逻辑行首的空白(空格和制表符)用来决定逻辑行的缩进层次，从而用来决定语句的分组。</p>
+<a id="more"></a>
+<p>　　 (2) 语句从新行的第一列开始。</p>
+<p>　　 (3) 缩进风格统一：</p>
+<p>　　         ① 每个缩进层次使用 单个制表符 或四个空格(IDE会自动将制表符设置成4个空格)</p>
+<p>　　         ② Python用缩进而不是{}表示程序块</p>
+<p><strong>Python区分大小写</strong></p>
+<p><strong>注释</strong></p>
+<p>　　 (1) 行注释</p>
+<p>　　     每行注释前加#号。当解释器看到#，则忽略这一行#后面的内容</p>
+<p>　　 (2) 段注释</p>
+<p>　　     使用三个连续单引号(‘’’)。当解释看到’’’，则会扫描到下一个’’’，然后忽略他们之间的内容。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>JVM、JRE和JDK</title>
