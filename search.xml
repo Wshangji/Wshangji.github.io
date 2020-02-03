@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>世界上没那么多错过</title>
+    <url>/2020/02/03/%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B2%A1%E9%82%A3%E4%B9%88%E5%A4%9A%E9%94%99%E8%BF%87/</url>
+    <content><![CDATA[<p><em>遗憾,是回不去的曾经,错过,是改不了的懦弱,结果,是不忍落泪的擦肩而过……</em></p>
+<a id="more"></a>
+<p>梦见的还是两年前的你<br>那时<br>画面里的你好美<br>沧海桑田<br>而你早已烙在了我的心间<br>好像去看看大海<br>想去沙滩走走<br>想去天山祈求一朵蓝莲花<br>想去看蝴蝶恋爱<br>去屋檐下看雨<br>阳台上看天<br>看云 看星 看月亮<br>不过<br>最想看的还是你！<br>甜甜的面庞</p>
+<p>生活<br>却仍然是眼前的生活<br>相隔千里的记忆似被什么给强拧在了一起<br>我记得<br>好像我们从未有过相见<br>更没有手牵手的漫步在云端<br>更别说那热烈的拥抱啊<br>也许梦里会实现</p>
+<p>不必遗憾<br>过程和结局都有了<br>再去期盼<br>可我却还想再贪婪一点</p>
+<p>不必遗憾<br>若是缘未散<br>定会再相见<br>该醒了，这场似是非是的梦境</p>
+]]></content>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java中Object类</title>
     <url>/2020/02/03/Java%E4%B8%ADObject%E7%B1%BB/</url>
     <content><![CDATA[<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><p>Object类是所有Java类的根基类，也就意味着所有的Java对象都拥有Object类的属性和方法。如果在类的声明中未使用extends关键字指明其父类，则默认继承Object类。</p>
