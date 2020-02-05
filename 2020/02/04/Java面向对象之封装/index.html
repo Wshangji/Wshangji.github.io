@@ -8,13 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java面向对象之封装 | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="封装就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Java面向对象之封装">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;04&#x2F;Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
+<meta property="og:description" content="封装就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。">
 <meta property="article:published_time" content="2020-02-04T06:17:42.000Z">
-<meta property="article:modified_time" content="2020-02-04T06:17:42.089Z">
+<meta property="article:modified_time" content="2020-02-05T04:08:27.244Z">
 <meta property="article:author" content="shamero">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
@@ -199,7 +202,76 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>封装就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。</p>
+<a id="more"></a>
+<p>我们程序设计要追求“高内聚，低耦合”。 高内聚就是类的内部数据操作细节自己完成，不允许外部干涉;低耦合是仅暴露少量的方法给外部使用，尽量方便外部调用。</p>
+<p><strong>封装的优点</strong></p>
+<p>提高代码的安全性。</p>
+<p>提高代码的复用性。</p>
+<p>“高内聚”：封装细节，便于修改内部代码，提高可维护性。</p>
+<p>“低耦合”：简化外部调用，便于调用者使用，便于扩展和协作。</p>
+<p><strong>封装的实现—使用访问控制符</strong></p>
+<p>Java是使用“访问控制符”来控制哪些细节需要封装，哪些细节需要暴露的。 Java中4种“访问控制符”分别为private、default、protected、public，它们说明了面向对象的封装性，所以我们要利用它们尽可能的让访问权限降到最低，从而提高安全性</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>同一个类</th>
+<th>同一个包</th>
+<th>子类</th>
+<th>所有类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>*</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>*</td>
+<td>*</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td></td>
+</tr>
+<tr>
+<td>public</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>private 表示私有，只有自己类能访问</p>
+</li>
+<li><p>default表示没有修饰符修饰，只有同一个包的类能访问</p>
+</li>
+<li><p>protected表示可以被同一个包的类以及其他包中的子类访问</p>
+</li>
+<li><p>public表示可以被该项目的所有包中的所有类访问</p>
+</li>
+</ol>
+<p><strong>类的处理</strong></p>
+<ol>
+<li><p>一般使用private访问权限。</p>
+</li>
+<li><p>提供相应的get/set方法来访问相关属性，这些方法通常是public修饰的，以提供对属性的赋值与读取操作(注意：boolean变量的get方法是is开头!)。</p>
+</li>
+<li><p>一些只用于本类的辅助性方法可以用private修饰，希望其他类调用的方法用public修饰。</p>
+</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 属性一般使用private修饰</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> flag;</span><br><span class="line">    <span class="comment">// 为属性提供public修饰的set/get方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFlag</span><span class="params">()</span> </span>&#123;<span class="comment">// 注意：boolean类型的属性get方法是is开头的</span></span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlag</span><span class="params">(<span class="keyword">boolean</span> flag)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flag = flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -228,6 +300,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       

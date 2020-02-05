@@ -8,13 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java关键字之super与final | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="super关键字super是直接对父类对象的引用。可以通过super来访问父类中被子类覆盖的方法或属性。使用super调用普通方法。语句没有位置限制，可以在子类中随意调用。 若是构造方法的第一行代码没有显式的调用super(…)或者this(…);那么Java默认都会调用super(),含义是调用父类的无参数构造方法。这里的super()可以省略。 例： public class TestSupe">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Java关键字之super与final">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;04&#x2F;Java%E5%85%B3%E9%94%AE%E5%AD%97%E4%B9%8Bsuper%E4%B8%8Efinal&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
+<meta property="og:description" content="super关键字super是直接对父类对象的引用。可以通过super来访问父类中被子类覆盖的方法或属性。使用super调用普通方法。语句没有位置限制，可以在子类中随意调用。 若是构造方法的第一行代码没有显式的调用super(…)或者this(…);那么Java默认都会调用super(),含义是调用父类的无参数构造方法。这里的super()可以省略。 例： public class TestSupe">
 <meta property="article:published_time" content="2020-02-04T06:18:31.000Z">
-<meta property="article:modified_time" content="2020-02-04T06:18:31.634Z">
+<meta property="article:modified_time" content="2020-02-05T07:14:32.884Z">
 <meta property="article:author" content="shamero">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
@@ -199,7 +203,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><p>super是直接对父类对象的引用。可以通过super来访问父类中被子类覆盖的方法或属性。使用super调用普通方法。语句没有位置限制，可以在子类中随意调用。</p>
+<p>若是构造方法的第一行代码没有显式的调用super(…)或者this(…);那么Java默认都会调用super(),含义是调用父类的无参数构造方法。这里的super()可以省略。</p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSuper01</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> ChildClass().f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">        value = <span class="number">100</span>;</span><br><span class="line">        System.out.println (<span class="string">"FatherClass.value="</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.f();  <span class="comment">//调用父类对象的普通方法</span></span><br><span class="line">        value = <span class="number">200</span>;</span><br><span class="line">        System.out.println(<span class="string">"ChildClass.value="</span>+value);</span><br><span class="line">        System.out.println(value);</span><br><span class="line">        System.out.println(<span class="keyword">super</span>.value); <span class="comment">//调用父类对象的成员变量</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h3><p><strong>1.修饰变量：</strong></p>
+<p><strong>2.修饰方法：</strong></p>
+<p><strong>3.修饰类：</strong></p>
+
       
 
       
@@ -228,6 +240,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -321,7 +348,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#super关键字"><span class="toc-number">1.</span> <span class="toc-text">super关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final关键字"><span class="toc-number">2.</span> <span class="toc-text">final关键字</span></a></li></ol>
                     </div>
                 </span>
             </div>
