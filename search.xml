@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>面向对象之接口与内部类</title>
+    <url>/2020/02/17/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Java关键字之super与final</title>
     <url>/2020/02/04/Java%E5%85%B3%E9%94%AE%E5%AD%97%E4%B9%8Bsuper%E4%B8%8Efinal/</url>
     <content><![CDATA[<h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><p>super是直接对父类对象的引用。可以通过super来访问父类中被子类覆盖的方法或属性。使用super调用普通方法。语句没有位置限制，可以在子类中随意调用。</p>
