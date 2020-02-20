@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面向对象之接口与内部类 | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="何为接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
+  <meta name="description" content="接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象之接口与内部类">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;17&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%86%85%E9%83%A8%E7%B1%BB&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
-<meta property="og:description" content="何为接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
+<meta property="og:description" content="接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
 <meta property="article:published_time" content="2020-02-17T00:29:21.000Z">
-<meta property="article:modified_time" content="2020-02-17T00:42:57.430Z">
+<meta property="article:modified_time" content="2020-02-20T06:22:37.586Z">
 <meta property="article:author" content="shamero">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -202,16 +202,50 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="何为接口"><a href="#何为接口" class="headerlink" title="何为接口"></a>何为接口</h3><p>接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。</p>
+        <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。</p>
 <p>抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。</p>
 <a id="more"></a>
 <p>从接口的实现者角度看，接口定义了可以向外部提供的服务。</p>
 <p>从接口的调用者角度看，接口定义了实现者能提供那些服务。</p>
 <p>接口是两个模块之间通信的标准，通信的规范。如果能把你要设计的模块之间的接口定义好，就相当于完成了系统的设计大纲，剩下的就是添砖加瓦的现了。大家在工作以后，做系统时往往就是使用“面向接口”的思想来设计系统。</p>
 <p>接口和实现类不是父子关系，是实现规则的关系。比如：我定义一个接口Runnable，Car实现它就能在地上跑，Train实现它也能在地上跑，飞机实现它也能在地上跑。就是说，如果它是交通工具，就一定能跑，但是一定要实现Runnable接口。</p>
-<p>· 接口的本质探讨<br>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你是好人，则必须能干掉坏人;如果你是坏人，则必须欺负好人。</p>
+<h4 id="接口的本质"><a href="#接口的本质" class="headerlink" title="接口的本质"></a>接口的本质</h4><p>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你是好人，则必须能干掉坏人;如果你是坏人，则必须欺负好人。</p>
 <p>接口的本质是契约，就像我们人间的法律一样。制定好后大家都遵守。</p>
 <p>面向对象的精髓，是对对象的抽象，最能体现这一点的就是接口。为什么我们讨论设计模式都只针对具备了抽象能力的语言(比如C++、Java、C#等)，就是因为设计模式所研究的，实际上就是如何合理的去抽象。</p>
+<h4 id="声明格式"><a href="#声明格式" class="headerlink" title="声明格式"></a>声明格式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[访问修饰符]  interface 接口名   [extends  父接口1，父接口2…]  &#123;</span><br><span class="line">常量定义；  </span><br><span class="line">方法定义；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ol>
+<li><p>访问修饰符：只能是public或默认。</p>
+</li>
+<li><p>接口名：和类名采用相同命名机制。</p>
+</li>
+<li><p>extends：接口可以多继承。</p>
+</li>
+<li><p>常量：接口中的属性只能是常量，总是：public static final 修饰。不写也是。</p>
+</li>
+<li><p>方法：接口中的方法只能是：public abstract。 省略的话，也是public abstract。</p>
+</li>
+</ol>
+<h4 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h4><ol>
+<li><p>子类通过implements来实现接口中的规范。</p>
+</li>
+<li><p>接口不能创建实例，但是可用于声明引用变量类型。</p>
+</li>
+<li><p>一个类实现了接口，必须实现接口中所有的方法，并且这些方法只能是public的。</p>
+</li>
+<li><p>JDK1.7之前，接口中只能包含静态常量、抽象方法，不能有普通属性、构造方法、普通方法。</p>
+</li>
+<li><p>JDK1.8后，接口中包含普通的静态方法。</p>
+</li>
+</ol>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Volant volant = <span class="keyword">new</span> Angel();</span><br><span class="line">        volant.fly();</span><br><span class="line">        System.out.println(Volant.FLY_HIGHT);</span><br><span class="line">        Honest honest = <span class="keyword">new</span> GoodMan();</span><br><span class="line">        honest.helpOther();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**飞行接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Volant</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> FLY_HIGHT = <span class="number">100</span>;  <span class="comment">// 总是：public static final类型的；</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;   <span class="comment">//总是：public abstract void fly();</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**善良接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Honest</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**Angle类实现飞行接口和善良接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Angel</span> <span class="keyword">implements</span> <span class="title">Volant</span>, <span class="title">Honest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">" 飞行 "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">" 嘿嘿嘿嘿 "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GoodMan</span> <span class="keyword">implements</span> <span class="title">Honest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"i love helping"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BirdMan</span> <span class="keyword">implements</span> <span class="title">Volant</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是Birdman"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p><code>接口完全支持多继承。和类的继承类似，子接口扩展某个父接口，将会获得父接口中所定义的一切</code></p>
+<h3 id="面向接口的编程"><a href="#面向接口的编程" class="headerlink" title="面向接口的编程"></a>面向接口的编程</h3><p>面向接口编程是面向对象编程的一部分。</p>
+<p>为什么需要面向接口编程? 软件设计中最难处理的就是需求的复杂变化，需求的变化更多的体现在具体实现上。我们的编程如果围绕具体实现来展开就会陷入”复杂变化”的汪洋大海中，软件也就不能最终实现。我们必须围绕某种稳定的东西开展，才能以静制动，实现规范的高质量的项目。</p>
+<p>接口就是规范，就是项目中最稳定的东东! 面向接口编程可以让我们把握住真正核心的东西，使实现复杂多变的需求成为可能。</p>
+<p>通过面向接口编程，而不是面向实现类编程，可以大大降低程序模块间的耦合性，提高整个系统的可扩展性和和可维护性。</p>
+<p>面向接口编程的概念比接口本身的概念要大得多。设计阶段相对比较困难，在你没有写实现时就要想好接口，接口一变就乱套了，所以设计要比实现难</p>
 
       
 
@@ -354,7 +388,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为接口"><span class="toc-number">1.</span> <span class="toc-text">何为接口</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">1.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#接口的本质"><span class="toc-number">1.1.</span> <span class="toc-text">接口的本质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#声明格式"><span class="toc-number">1.2.</span> <span class="toc-text">声明格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#说明"><span class="toc-number">1.3.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#要点"><span class="toc-number">1.4.</span> <span class="toc-text">要点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">1.5.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充"><span class="toc-number">1.6.</span> <span class="toc-text">补充</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向接口的编程"><span class="toc-number">2.</span> <span class="toc-text">面向接口的编程</span></a></li></ol>
                     </div>
                 </span>
             </div>
