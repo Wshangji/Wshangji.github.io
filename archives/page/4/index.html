@@ -6,22 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>排序之归并排序 | KAKU日常</title>
+  <title>Archives | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。   哔bibibi(瞎哔哔)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="排序之归并排序">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="KAKU日常">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;page&#x2F;4&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
-<meta property="og:description" content="来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。   哔bibibi(瞎哔哔)">
-<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2019&#x2F;12&#x2F;623396b9f4e3a0ab.jpg">
-<meta property="article:published_time" content="2019-11-26T01:26:33.000Z">
-<meta property="article:modified_time" content="2019-12-26T08:55:38.246Z">
 <meta property="article:author" content="shamero">
-<meta property="article:tag" content="c++">
-<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2019&#x2F;12&#x2F;623396b9f4e3a0ab.jpg">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
   
@@ -185,224 +177,63 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-排序之归并排序" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      排序之归并排序
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/11/10/hello/" class="archive-article-date">
+  	<time datetime="2019-11-10T00:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/11/10/hello/">hello</a>
     </h1>
   
 
-        
-        <a href="/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2019-11-26T01:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。 </p>
-<h2 id="哔bibibi-瞎哔哔"><a href="#哔bibibi-瞎哔哔" class="headerlink" title=" 哔bibibi(瞎哔哔)"></a> <del>哔bibibi(瞎哔哔)</del></h2><a id="more"></a>
-<p>好吧,归并排序，是创建在归并操作上的一种有效的排序算法，效率为O(nlogn)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分</p>
-<p>治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。速度仅次于快速排序，为稳定排序算法，一般用</p>
-<p>于对总体无序，但是各子项相对有序的数列，归并排序的比较次数小于快速排序的比较次数，移动次数一般多于快速排序的移动次数。</p>
-<p><strong>算法思想</strong></p>
-<p>该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶</p>
-<p>段则将分的阶段得到的各答案”修补”在一起，即分而治之)。既然归并排序采用的是分治法，并且依托于归并操作，那么其思想肯定是分</p>
-<p>而治之。我们知道归并操作是将两个有序的数列合并到一个有序的序列，那么对于一个无序的长序列，可以把它分解为若干个有序的子</p>
-<p>序列，然后依次进行归并。如果我们说每一个数字都是单独有序的序列，那么只要把原始长序列依次分解，直到每个子序列都只有一个</p>
-<p>元素的时候，再依次把所有的序列进行归并，直到序列数为1</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/12/623396b9f4e3a0ab.jpg" alt="alt 单向链表"></p>
-<p>综上可知：</p>
-<p>归并排序其实要做两件事：</p>
-<p>（1）“分解”——将序列每次折半划分。<br>（2）“合并”——将划分后的序列段两两合并后排序。</p>
-<p><strong>算法步骤</strong></p>
-<p>(1)申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
-<p>(2)设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
-<p>(3)比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
-<p>(4)重复步骤 3 直到某一指针达到序列尾；</p>
-<p>(5)将另一序列剩下的所有元素直接复制到合并序列尾。</p>
-<p><strong>话不多说，上代码</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//归并过程</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> help[r-l+<span class="number">1</span>];<span class="comment">//辅助数组</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lIndex = l;</span><br><span class="line">	<span class="keyword">int</span> rIndex = mid+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(lIndex &lt;= mid &amp;&amp; rIndex &lt;= r)&#123;</span><br><span class="line">		help[i++] = arr[lIndex] &lt; arr[rIndex] ? arr[lIndex++]:arr[rIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//左边和右边肯定有一边到头了，不可能同时，因为每次只移动一边</span></span><br><span class="line">	<span class="keyword">while</span>(lIndex &lt;= mid)&#123;</span><br><span class="line">		help[i++] = arr[lIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(rIndex &lt;= r)&#123;</span><br><span class="line">		help[i++] = arr[rIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//将排好序的辅助数组赋值给原始数组，不需要返回值</span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; r-l+<span class="number">1</span>; i++)&#123;</span><br><span class="line">		arr[l+i] = help[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//递归</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">msort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//左半部分归并排序</span></span><br><span class="line">	msort(arr, l, mid);</span><br><span class="line">    <span class="comment">//右半部分归并排序</span></span><br><span class="line">	msort(arr, mid+<span class="number">1</span>, r);</span><br><span class="line">    <span class="comment">//左右部分归并</span></span><br><span class="line">	merge(arr, l, mid, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//归并排序整个数组</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">msort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果数组为空或只有一个元素，不需要排序</span></span><br><span class="line">	<span class="keyword">if</span>(arr == <span class="literal">NULL</span> || n &lt; <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	msort(arr,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arry[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;arry[i];</span><br><span class="line">    msort(arry, n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arry[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持QAQ<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/26/%E6%9C%80%E8%BF%91%E5%A5%BD%E5%83%8F%E6%9C%89%E7%82%B9%E9%A3%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          最近好像有点飘
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/11/24/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序之快速排序</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#哔bibibi-瞎哔哔"><span class="toc-number">1.</span> <span class="toc-text"> 哔bibibi(瞎哔哔)</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "http://yoursite.com/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/", 
-    sourceId: "排序之归并排序",
-    productKey: "ture",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -433,8 +264,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

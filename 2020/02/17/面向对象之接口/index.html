@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>排序之归并排序 | KAKU日常</title>
+  <title>面向对象之接口 | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。   哔bibibi(瞎哔哔)">
+  <meta name="description" content="接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序之归并排序">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&#x2F;index.html">
+<meta property="og:title" content="面向对象之接口">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;17&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
-<meta property="og:description" content="来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。   哔bibibi(瞎哔哔)">
-<meta property="og:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2019&#x2F;12&#x2F;623396b9f4e3a0ab.jpg">
-<meta property="article:published_time" content="2019-11-26T01:26:33.000Z">
-<meta property="article:modified_time" content="2019-12-26T08:55:38.246Z">
+<meta property="og:description" content="接口接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。 抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。">
+<meta property="article:published_time" content="2020-02-17T00:29:21.000Z">
+<meta property="article:modified_time" content="2020-02-24T06:46:42.248Z">
 <meta property="article:author" content="shamero">
-<meta property="article:tag" content="c++">
-<meta property="article:tag" content="排序">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ftp.bmp.ovh&#x2F;imgs&#x2F;2019&#x2F;12&#x2F;623396b9f4e3a0ab.jpg">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
   
@@ -185,49 +182,71 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-排序之归并排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面向对象之接口" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      排序之归并排序
+      面向对象之接口
     </h1>
   
 
         
-        <a href="/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2019-11-26T01:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
+        <a href="/2020/02/17/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2020-02-17T00:29:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。 </p>
-<h2 id="哔bibibi-瞎哔哔"><a href="#哔bibibi-瞎哔哔" class="headerlink" title=" 哔bibibi(瞎哔哔)"></a> <del>哔bibibi(瞎哔哔)</del></h2><a id="more"></a>
-<p>好吧,归并排序，是创建在归并操作上的一种有效的排序算法，效率为O(nlogn)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分</p>
-<p>治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。速度仅次于快速排序，为稳定排序算法，一般用</p>
-<p>于对总体无序，但是各子项相对有序的数列，归并排序的比较次数小于快速排序的比较次数，移动次数一般多于快速排序的移动次数。</p>
-<p><strong>算法思想</strong></p>
-<p>该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶</p>
-<p>段则将分的阶段得到的各答案”修补”在一起，即分而治之)。既然归并排序采用的是分治法，并且依托于归并操作，那么其思想肯定是分</p>
-<p>而治之。我们知道归并操作是将两个有序的数列合并到一个有序的序列，那么对于一个无序的长序列，可以把它分解为若干个有序的子</p>
-<p>序列，然后依次进行归并。如果我们说每一个数字都是单独有序的序列，那么只要把原始长序列依次分解，直到每个子序列都只有一个</p>
-<p>元素的时候，再依次把所有的序列进行归并，直到序列数为1</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/12/623396b9f4e3a0ab.jpg" alt="alt 单向链表"></p>
-<p>综上可知：</p>
-<p>归并排序其实要做两件事：</p>
-<p>（1）“分解”——将序列每次折半划分。<br>（2）“合并”——将划分后的序列段两两合并后排序。</p>
-<p><strong>算法步骤</strong></p>
-<p>(1)申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
-<p>(2)设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
-<p>(3)比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
-<p>(4)重复步骤 3 直到某一指针达到序列尾；</p>
-<p>(5)将另一序列剩下的所有元素直接复制到合并序列尾。</p>
-<p><strong>话不多说，上代码</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//归并过程</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> help[r-l+<span class="number">1</span>];<span class="comment">//辅助数组</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lIndex = l;</span><br><span class="line">	<span class="keyword">int</span> rIndex = mid+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(lIndex &lt;= mid &amp;&amp; rIndex &lt;= r)&#123;</span><br><span class="line">		help[i++] = arr[lIndex] &lt; arr[rIndex] ? arr[lIndex++]:arr[rIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//左边和右边肯定有一边到头了，不可能同时，因为每次只移动一边</span></span><br><span class="line">	<span class="keyword">while</span>(lIndex &lt;= mid)&#123;</span><br><span class="line">		help[i++] = arr[lIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(rIndex &lt;= r)&#123;</span><br><span class="line">		help[i++] = arr[rIndex++];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//将排好序的辅助数组赋值给原始数组，不需要返回值</span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; r-l+<span class="number">1</span>; i++)&#123;</span><br><span class="line">		arr[l+i] = help[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//递归</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">msort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//左半部分归并排序</span></span><br><span class="line">	msort(arr, l, mid);</span><br><span class="line">    <span class="comment">//右半部分归并排序</span></span><br><span class="line">	msort(arr, mid+<span class="number">1</span>, r);</span><br><span class="line">    <span class="comment">//左右部分归并</span></span><br><span class="line">	merge(arr, l, mid, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//归并排序整个数组</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">msort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果数组为空或只有一个元素，不需要排序</span></span><br><span class="line">	<span class="keyword">if</span>(arr == <span class="literal">NULL</span> || n &lt; <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	msort(arr,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arry[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;arry[i];</span><br><span class="line">    msort(arry, n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arry[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。</p>
+<p>抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全面向规范的，规定了一批类具有的公共方法规范。</p>
+<a id="more"></a>
+<p>从接口的实现者角度看，接口定义了可以向外部提供的服务。</p>
+<p>从接口的调用者角度看，接口定义了实现者能提供那些服务。</p>
+<p>接口是两个模块之间通信的标准，通信的规范。如果能把你要设计的模块之间的接口定义好，就相当于完成了系统的设计大纲，剩下的就是添砖加瓦的现了。大家在工作以后，做系统时往往就是使用“面向接口”的思想来设计系统。</p>
+<p>接口和实现类不是父子关系，是实现规则的关系。比如：我定义一个接口Runnable，Car实现它就能在地上跑，Train实现它也能在地上跑，飞机实现它也能在地上跑。就是说，如果它是交通工具，就一定能跑，但是一定要实现Runnable接口。</p>
+<h4 id="接口的本质"><a href="#接口的本质" class="headerlink" title="接口的本质"></a>接口的本质</h4><p>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你是好人，则必须能干掉坏人;如果你是坏人，则必须欺负好人。</p>
+<p>接口的本质是契约，就像我们人间的法律一样。制定好后大家都遵守。</p>
+<p>面向对象的精髓，是对对象的抽象，最能体现这一点的就是接口。为什么我们讨论设计模式都只针对具备了抽象能力的语言(比如C++、Java、C#等)，就是因为设计模式所研究的，实际上就是如何合理的去抽象。</p>
+<h4 id="声明格式"><a href="#声明格式" class="headerlink" title="声明格式"></a>声明格式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[访问修饰符]  interface 接口名   [extends  父接口1，父接口2…]  &#123;</span><br><span class="line">常量定义；  </span><br><span class="line">方法定义；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ol>
+<li><p>访问修饰符：只能是public或默认。</p>
+</li>
+<li><p>接口名：和类名采用相同命名机制。</p>
+</li>
+<li><p>extends：接口可以多继承。</p>
+</li>
+<li><p>常量：接口中的属性只能是常量，总是：public static final 修饰。不写也是。</p>
+</li>
+<li><p>方法：接口中的方法只能是：public abstract。 省略的话，也是public abstract。</p>
+</li>
+</ol>
+<h4 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h4><ol>
+<li><p>子类通过implements来实现接口中的规范。</p>
+</li>
+<li><p>接口不能创建实例，但是可用于声明引用变量类型。</p>
+</li>
+<li><p>一个类实现了接口，必须实现接口中所有的方法，并且这些方法只能是public的。</p>
+</li>
+<li><p>JDK1.7之前，接口中只能包含静态常量、抽象方法，不能有普通属性、构造方法、普通方法。</p>
+</li>
+<li><p>JDK1.8后，接口中包含普通的静态方法。</p>
+</li>
+</ol>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Volant volant = <span class="keyword">new</span> Angel();</span><br><span class="line">        volant.fly();</span><br><span class="line">        System.out.println(Volant.FLY_HIGHT);</span><br><span class="line">        Honest honest = <span class="keyword">new</span> GoodMan();</span><br><span class="line">        honest.helpOther();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**飞行接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Volant</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> FLY_HIGHT = <span class="number">100</span>;  <span class="comment">// 总是：public static final类型的；</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;   <span class="comment">//总是：public abstract void fly();</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**善良接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Honest</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**Angle类实现飞行接口和善良接口*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Angel</span> <span class="keyword">implements</span> <span class="title">Volant</span>, <span class="title">Honest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">" 飞行 "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">" 嘿嘿嘿嘿 "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GoodMan</span> <span class="keyword">implements</span> <span class="title">Honest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"i love helping"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BirdMan</span> <span class="keyword">implements</span> <span class="title">Volant</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是Birdman"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p><code>接口完全支持多继承。和类的继承类似，子接口扩展某个父接口，将会获得父接口中所定义的一切</code></p>
+<h3 id="面向接口的编程"><a href="#面向接口的编程" class="headerlink" title="面向接口的编程"></a>面向接口的编程</h3><p>面向接口编程是面向对象编程的一部分。</p>
+<p>为什么需要面向接口编程? 软件设计中最难处理的就是需求的复杂变化，需求的变化更多的体现在具体实现上。我们的编程如果围绕具体实现来展开就会陷入”复杂变化”的汪洋大海中，软件也就不能最终实现。我们必须围绕某种稳定的东西开展，才能以静制动，实现规范的高质量的项目。</p>
+<p>接口就是规范，就是项目中最稳定的东东! 面向接口编程可以让我们把握住真正核心的东西，使实现复杂多变的需求成为可能。</p>
+<p>通过面向接口编程，而不是面向实现类编程，可以大大降低程序模块间的耦合性，提高整个系统的可扩展性和和可维护性。</p>
+<p>面向接口编程的概念比接口本身的概念要大得多。设计阶段相对比较困难，在你没有写实现时就要想好接口，接口一变就乱套了，所以设计要比实现难</p>
+
       
 
       
@@ -261,11 +280,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -321,7 +336,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +350,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/11/26/%E6%9C%80%E8%BF%91%E5%A5%BD%E5%83%8F%E6%9C%89%E7%82%B9%E9%A3%98/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/19/%E6%88%91%E7%9A%84%E5%AE%B6%E4%B9%A1%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          最近好像有点飘
+          我的家乡（作业）
         
       </div>
     </a>
   
   
-    <a href="/2019/11/24/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序之快速排序</div>
+    <a href="/2020/02/04/Java%E5%85%B3%E9%94%AE%E5%AD%97%E4%B9%8Bsuper%E4%B8%8Efinal/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java关键字之super与final</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +388,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#哔bibibi-瞎哔哔"><span class="toc-number">1.</span> <span class="toc-text"> 哔bibibi(瞎哔哔)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">1.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#接口的本质"><span class="toc-number">1.1.</span> <span class="toc-text">接口的本质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#声明格式"><span class="toc-number">1.2.</span> <span class="toc-text">声明格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#说明"><span class="toc-number">1.3.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#要点"><span class="toc-number">1.4.</span> <span class="toc-text">要点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">1.5.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充"><span class="toc-number">1.6.</span> <span class="toc-text">补充</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向接口的编程"><span class="toc-number">2.</span> <span class="toc-text">面向接口的编程</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -390,8 +405,8 @@ var _hmt = _hmt || [];
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/", 
-    sourceId: "排序之归并排序",
+    url: "http://yoursite.com/2020/02/17/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%8E%A5%E5%8F%A3/", 
+    sourceId: "面向对象之接口",
     productKey: "ture",
     target: "cloud-tie-wrapper"
   };
