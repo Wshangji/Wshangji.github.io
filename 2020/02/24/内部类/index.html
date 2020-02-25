@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>内部类 | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。">
+  <meta name="description" content="内部类的概念一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内部类">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;24&#x2F;%E5%86%85%E9%83%A8%E7%B1%BB&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
-<meta property="og:description" content="一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。">
+<meta property="og:description" content="内部类的概念一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。">
 <meta property="article:published_time" content="2020-02-24T06:45:47.000Z">
-<meta property="article:modified_time" content="2020-02-24T06:47:29.236Z">
+<meta property="article:modified_time" content="2020-02-25T01:20:00.856Z">
 <meta property="article:author" content="shamero">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -202,9 +202,27 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
+        <h3 id="内部类的概念"><a href="#内部类的概念" class="headerlink" title="内部类的概念"></a>内部类的概念</h3><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
 <a id="more"></a>
 <p>内部类可以使用public、default、protected 、private以及static修饰。而外部顶级类(我们以前接触的类)只能使用public和default修饰。</p>
+<p><strong>注意</strong></p>
+<p>内部类只是一个编译时概念，一旦我们编译成功，就会成为完全不同的两个类。编译完成后会出现两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名可以和外部类的相同</p>
+<p><strong>内部类的作用</strong></p>
+<ol>
+<li><p>内部类提供了更好的封装，只能让外部类直接访问，不允许同一个包中的其它类直接访问。</p>
+</li>
+<li><p>内部类可以直接访问外部类的私有属性，内部类被当成其外部类的成员。但外部类不能访问内部类的内部属性。</p>
+</li>
+<li><p>接口只是解决了多重继承的部分问题，而内部类使得多重继承的解决方案变得更加完善。</p>
+</li>
+</ol>
+<p><strong>内部类的使用场景</strong></p>
+<ol>
+<li><p>由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，在只为外部类提供服务的情况下可以优先考虑内部类</p>
+</li>
+<li><p>内部类的使用可以间接的实现多继承，每个内部类都能独立的继承一个类或者实现某些接口，所以无论外部类是否已经继承了某个类或者实现了某些接口，对于内部类没有任何影响</p>
+</li>
+</ol>
 
       
 
@@ -338,7 +356,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#内部类的概念"><span class="toc-number">1.</span> <span class="toc-text">内部类的概念</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -488,7 +506,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,11 +522,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +534,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,15 +542,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
             <div class="clearfix"></div>
