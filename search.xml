@@ -12,11 +12,11 @@
 <p>pow(double a, double b) a的b次幂</p>
 <p>max(double a, double b) 取大值</p>
 <p>min(double a, double b) 取小值</p>
-<p> ceil(double a) 大于a的最小整数</p>
-<p>   \8. floor(double a) 小于a的最大整数</p>
-<p>   \9. random() 返回 0.0 到 1.0 的随机数</p>
-<p>   \10. long round(double a) double型的数据a转换为long型(四舍五入)</p>
-<p>   \11. toDegrees(double angrad) 弧度-&gt;角度</p>
+<p>ceil(double a) 大于a的最小整数</p>
+<p>floor(double a) 小于a的最大整数</p>
+<p>random() 返回 0.0 到 1.0 的随机数</p>
+<p>long round(double a) double型的数据a转换为long型(四舍五入)</p>
+<p>toDegrees(double angrad) 弧度-&gt;角度</p>
 <p>toRadians(double angdeg) 角度-&gt;弧度</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMath</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//取整相关操作</span></span><br><span class="line">        System.out.println(Math.ceil(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.floor(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.8</span>));</span><br><span class="line">        <span class="comment">//绝对值、开方、a的b次幂等操作</span></span><br><span class="line">        System.out.println(Math.abs(-<span class="number">45</span>));</span><br><span class="line">        System.out.println(Math.sqrt(<span class="number">64</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">        <span class="comment">//Math类中常用的常量</span></span><br><span class="line">        System.out.println(Math.PI);</span><br><span class="line">        System.out.println(Math.E);</span><br><span class="line">        <span class="comment">//随机数</span></span><br><span class="line">        System.out.println(Math.random());<span class="comment">// [0,1)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
