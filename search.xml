@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Math类与Random类常用方法</title>
+    <url>/2020/02/29/Math%E7%B1%BB%E4%B8%8ERandom%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p><em>Java提供的常用类中，Math类为常用的数学计算方法，Random类为常用的随机生成方法</em></p>
+<a id="more"></a>
+
+<h2 id="Math类方法"><a href="#Math类方法" class="headerlink" title="Math类方法"></a>Math类方法</h2><p>abs 绝对值</p>
+<p>acos,asin,atan,cos,sin,tan 三角函数</p>
+<p>sqrt 平方根</p>
+<p>pow(double a, double b) a的b次幂</p>
+<p>max(double a, double b) 取大值</p>
+<p>min(double a, double b) 取小值</p>
+<p> ceil(double a) 大于a的最小整数</p>
+<p>   \8. floor(double a) 小于a的最大整数</p>
+<p>   \9. random() 返回 0.0 到 1.0 的随机数</p>
+<p>   \10. long round(double a) double型的数据a转换为long型(四舍五入)</p>
+<p>   \11. toDegrees(double angrad) 弧度-&gt;角度</p>
+<p>toRadians(double angdeg) 角度-&gt;弧度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMath</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//取整相关操作</span></span><br><span class="line">        System.out.println(Math.ceil(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.floor(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.8</span>));</span><br><span class="line">        <span class="comment">//绝对值、开方、a的b次幂等操作</span></span><br><span class="line">        System.out.println(Math.abs(-<span class="number">45</span>));</span><br><span class="line">        System.out.println(Math.sqrt(<span class="number">64</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">        <span class="comment">//Math类中常用的常量</span></span><br><span class="line">        System.out.println(Math.PI);</span><br><span class="line">        System.out.println(Math.E);</span><br><span class="line">        <span class="comment">//随机数</span></span><br><span class="line">        System.out.println(Math.random());<span class="comment">// [0,1)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Random方法"><a href="#Random方法" class="headerlink" title="Random方法"></a>Random方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandom</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="comment">//随机生成[0,1)之间的double类型的数据</span></span><br><span class="line">        System.out.println(rand.nextDouble());</span><br><span class="line">        <span class="comment">//随机生成int类型允许范围之内的整型数据</span></span><br><span class="line">        System.out.println(rand.nextInt());</span><br><span class="line">        <span class="comment">//随机生成[0,1)之间的float类型的数据</span></span><br><span class="line">        System.out.println(rand.nextFloat());</span><br><span class="line">        <span class="comment">//随机生成false或者true</span></span><br><span class="line">        System.out.println(rand.nextBoolean());</span><br><span class="line">        <span class="comment">//随机生成[0,10)之间的int类型的数据</span></span><br><span class="line">        System.out.print(rand.nextInt(<span class="number">10</span>));</span><br><span class="line">        <span class="comment">//随机生成[20,30)之间的int类型的数据</span></span><br><span class="line">        System.out.print(<span class="number">20</span> + rand.nextInt(<span class="number">10</span>));</span><br><span class="line">        <span class="comment">//随机生成[20,30)之间的int类型的数据（此种方法计算较为复杂）</span></span><br><span class="line">        System.out.print(<span class="number">20</span> + (<span class="keyword">int</span>) (rand.nextDouble() * <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>内部类</title>
     <url>/2020/02/24/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h3 id="内部类的概念"><a href="#内部类的概念" class="headerlink" title="内部类的概念"></a>内部类的概念</h3><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
