@@ -34,13 +34,12 @@
   <entry>
     <title>内部类</title>
     <url>/2020/02/24/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h3 id="内部类的概念"><a href="#内部类的概念" class="headerlink" title="内部类的概念"></a>内部类的概念</h3><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
+    <content><![CDATA[<h2 id="内部类的概念"><a href="#内部类的概念" class="headerlink" title="内部类的概念"></a>内部类的概念</h2><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
 <a id="more"></a>
 <p>内部类可以使用public、default、protected 、private以及static修饰。而外部顶级类(我们以前接触的类)只能使用public和default修饰。</p>
 <p><strong>注意</strong></p>
 <p>内部类只是一个编译时概念，一旦我们编译成功，就会成为完全不同的两个类。编译完成后会出现两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名可以和外部类的相同</p>
-<p><strong>内部类的作用</strong></p>
-<ol>
+<h4 id="内部类的作用"><a href="#内部类的作用" class="headerlink" title="内部类的作用"></a>内部类的作用</h4><ol>
 <li><p>内部类提供了更好的封装，只能让外部类直接访问，不允许同一个包中的其它类直接访问。</p>
 </li>
 <li><p>内部类可以直接访问外部类的私有属性，内部类被当成其外部类的成员。但外部类不能访问内部类的内部属性。</p>
@@ -48,13 +47,55 @@
 <li><p>接口只是解决了多重继承的部分问题，而内部类使得多重继承的解决方案变得更加完善。</p>
 </li>
 </ol>
-<p><strong>内部类的使用场景</strong></p>
+<h4 id="内部类的使用场景"><a href="#内部类的使用场景" class="headerlink" title="内部类的使用场景"></a>内部类的使用场景</h4><ol>
+<li>由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，在只为外部类提供服务的情况下可以优先考虑内部类</li>
+<li>内部类的使用可以间接的实现多继承，每个内部类都能独立的继承一个类或者实现某些接口，所以无论外部类是否已经继承了某个类或者实现了某些接口，对于内部类没有任何影响</li>
+</ol>
+<h2 id="内部类的分类"><a href="#内部类的分类" class="headerlink" title="内部类的分类"></a>内部类的分类</h2><p>在Java中内部类主要分为成员内部类(非静态内部类、静态内部类)、匿名内部类、局部内部类。<br>.成员内部类(可以使用private、default、protected、public任意进行修饰。 类文件：外部类$内部类.class)</p>
+<h4 id="非静态内部类-外部类里使用非静态内部类和平时使用其他类没什么不同"><a href="#非静态内部类-外部类里使用非静态内部类和平时使用其他类没什么不同" class="headerlink" title="非静态内部类(外部类里使用非静态内部类和平时使用其他类没什么不同)"></a>非静态内部类(外部类里使用非静态内部类和平时使用其他类没什么不同)</h4><p> i. 非静态内部类必须寄存在一个外部类对象里。因此，如果有一个非静态内部类对象那么一定存在对应的外部类对象。非静态内部类对象单独属于外部类的某个对象。</p>
+<p>ii. 非静态内部类可以直接访问外部类的成员，但是外部类不能直接访问非静态内部类成员。</p>
+<p>iii. 非静态内部类不能有静态方法、静态属性和静态初始化块。</p>
+<p>iv. 外部类的静态方法、静态代码块不能访问非静态内部类，包括不能使用非静态内部类定义变量、创建实例。</p>
+<p>v. 成员变量访问特点：</p>
 <ol>
-<li><p>由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，在只为外部类提供服务的情况下可以优先考虑内部类</p>
+<li><p>内部类里方法的局部变量：变量名。</p>
 </li>
-<li><p>内部类的使用可以间接的实现多继承，每个内部类都能独立的继承一个类或者实现某些接口，所以无论外部类是否已经继承了某个类或者实现了某些接口，对于内部类没有任何影响</p>
+<li><p>内部类属性：this.变量名。</p>
+</li>
+<li><p>外部类属性：外部类名.this.变量名。</p>
 </li>
 </ol>
+<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> age = <span class="number">30</span>;</span><br><span class="line">            System.out.println(<span class="string">"内部类方法里的局部变量age:"</span> + age);<span class="comment">// 30</span></span><br><span class="line">            System.out.println(<span class="string">"内部类的成员变量age:"</span> + <span class="keyword">this</span>.age);<span class="comment">// 20</span></span><br><span class="line">            System.out.println(<span class="string">"外部类的成员变量age:"</span> + Outer.<span class="keyword">this</span>.age);<span class="comment">// 10</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>内部类访问</strong></p>
+<ul>
+<li>外部类中访问内部类：<code>new Inner()</code></li>
+<li>外部类以外的地方访问非静态内部类： <code>Outer.Inner varname = new Outer().new Inner()。</code></li>
+</ul>
+<h4 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h4><h5 id="使用要点"><a href="#使用要点" class="headerlink" title="使用要点"></a>使用要点</h5><ol>
+<li><p>当一个静态内部类对象存在，并不一定存在对应的外部类对象。 因此，静态内部类的实例方法不能直接访问外部类的实例方法。</p>
+</li>
+<li><p>静态内部类看做外部类的一个静态成员。 因此，外部类的方法中可以通过：“静态内部类.名字”的方式访问静态内部类的静态成员，通过 new 静态内部类()访问静态内部类的实例。</p>
+</li>
+</ol>
+<h5 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">    <span class="comment">//相当于外部类的一个静态成员</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStaticInnerClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//通过 new 外部类名.内部类名() 来创建内部类对象</span></span><br><span class="line">        Outer.Inner inner =<span class="keyword">new</span> Outer.Inner();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h4><p>适合那种只需要使用一次的类。比如：键盘监听操作等</p>
+<h5 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span>  父类构造器(实参类表) \实现接口 () &#123;</span><br><span class="line">           <span class="comment">//匿名内部类类体！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul>
+<li>匿名内部类没有访问修饰符</li>
+<li>匿名内部类没有构造方法</li>
+</ul>
+<h5 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.addWindowListener(<span class="keyword">new</span> WindowAdapter()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line"><span class="keyword">this</span>.addKeyListener(<span class="keyword">new</span> KeyAdapter()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">keyPressed</span><span class="params">(KeyEvent e)</span> </span>&#123;</span><br><span class="line">            myTank.keyPressed(e);</span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">keyReleased</span><span class="params">(KeyEvent e)</span> </span>&#123;</span><br><span class="line">            myTank.keyReleased(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h4><p>还有一种内部类，它是定义在方法内部的，作用域只限于本方法，称为局部内部类。</p>
+<p>局部内部类的的使用主要是用来解决比较复杂的问题，想创建一个类来辅助我们的解决方案，到那时又不希望这个类是公共可用的，所以就产生了局部内部类。局部内部类和成员内部类一样被编译，只是它的作用域发生了改变，它只能在该方法中被使用，出了该方法就会失效。</p>
+<p>局部内部类在实际开发中应用很少</p>
+<h5 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//作用域仅限于该方法</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"helloworld"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">new</span> Inner().fun();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Test2().show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>java</tag>
