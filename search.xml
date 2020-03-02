@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>人生苦短，我用python</title>
+    <url>/2020/03/02/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8C%E6%88%91%E7%94%A8python/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Math类与Random类常用方法</title>
     <url>/2020/02/29/Math%E7%B1%BB%E4%B8%8ERandom%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p><em>Java提供的常用类中，Math类为常用的数学计算方法，Random类为常用的随机生成方法</em></p>
