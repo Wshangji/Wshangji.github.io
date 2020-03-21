@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>人生苦短，我用python | KAKU日常</title>
+  <title>面向对象(1) | KAKU日常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="人生苦短，我用python">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;02&#x2F;%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8C%E6%88%91%E7%94%A8python&#x2F;index.html">
+  <meta name="description" content="面向过程与面向对象面向过程(Procedure Oriented)和面向对象(Object Oriented,OO)都是对软件分析、设计和开发的一种思想,它指导着人们以不同的方式去分析、设计和开发软件。早期先有面向过程思想，随着软件规模的扩大，问题复杂性的提高，面向过程的弊端越来越明显的显示出来，出现了面向对象思想并成为目前主流的方式。两者都贯穿于软件分析、设计和开发各个阶段，对应面向对象就分别称">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象(1)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;21&#x2F;%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1&#x2F;index.html">
 <meta property="og:site_name" content="KAKU日常">
-<meta property="article:published_time" content="2020-03-02T07:20:33.000Z">
-<meta property="article:modified_time" content="2020-03-02T07:21:18.961Z">
+<meta property="og:description" content="面向过程与面向对象面向过程(Procedure Oriented)和面向对象(Object Oriented,OO)都是对软件分析、设计和开发的一种思想,它指导着人们以不同的方式去分析、设计和开发软件。早期先有面向过程思想，随着软件规模的扩大，问题复杂性的提高，面向过程的弊端越来越明显的显示出来，出现了面向对象思想并成为目前主流的方式。两者都贯穿于软件分析、设计和开发各个阶段，对应面向对象就分别称">
+<meta property="article:published_time" content="2020-03-21T01:39:06.000Z">
+<meta property="article:modified_time" content="2020-03-21T01:40:57.316Z">
 <meta property="article:author" content="shamero">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KAKU日常" type="application/atom+xml">
@@ -180,27 +183,57 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-人生苦短，我用python" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面向对象-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      人生苦短，我用python
+      面向对象(1)
     </h1>
   
 
         
-        <a href="/2020/03/02/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8C%E6%88%91%E7%94%A8python/" class="archive-article-date">
-  	<time datetime="2020-03-02T07:20:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
+        <a href="/2020/03/21/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" class="archive-article-date">
+  	<time datetime="2020-03-21T01:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="面向过程与面向对象"><a href="#面向过程与面向对象" class="headerlink" title="面向过程与面向对象"></a>面向过程与面向对象</h3><p>面向过程(Procedure Oriented)和面向对象(Object Oriented,OO)都是对软件分析、设计和开发的一种思想,它指导着人们以不同的方式去分析、设计和开发软件。早期先有面向过程思想，随着软件规模的扩大，问题复杂性的提高，面向过程的弊端越来越明显的显示出来，出现了面向对象思想并成为目前主流的方式。两者都贯穿于软件分析、设计和开发各个阶段，对应面向对象就分别称为面向对象分析( OOA )、面向对象设计(OOD)和面向对象编程(OOP)。C语言是一种典型的面向过程语言，Java是一种典型的面向对象语言</p>
+<a id="more"></a>
+
+<p><strong>面向过程</strong></p>
+<p>面向过程思想思考问题时，我们首先思考“怎么按步骤实现?”并将步骤对应成方法，一步一步，最终完成。 这个适合简单任务，不需要过多协作的情况下。比如，如何开车?我们很容易就列出实现步骤：</p>
+<ol>
+<li>发动车 2. 挂挡 3.踩油门 4. 走你</li>
+</ol>
+<p>面向过程适合简单、不需要协作的事务。 但是当我们思考比较复杂的问题，比如“如何造车?”，就会发现列出1234这样的步骤，是不可能的。那是因为，造车太复杂，需要很多协作才能完成。此时面向对象思想就应运而生了。</p>
+<p><strong>面向对象</strong></p>
+<p>面向对象(Object)思想更契合人的思维模式。我们首先思考的是“怎么设计这个事物?” 比如思考造车，我们就会先思考“车怎么设计?”，而不是“怎么按步骤造车的问题”。这就是思维方式的转变。</p>
+<p>面向对象思想思考造车，发现车由如下对象组成：</p>
+<ol>
+<li>轮胎</li>
+<li>发动机</li>
+<li>车壳</li>
+<li>座椅</li>
+<li>挡风玻璃</li>
+</ol>
+<p>为了便于协作，我们找轮胎厂完成制造轮胎的步骤，发动机厂完成制造发动机的步骤;这样，发现大家可以同时进行车的制造，最终进行组装，大大提高了效率。但是，具体到轮胎厂的一个流水线操作，仍然是有步骤的，还是离不开面向过程思想</p>
+<p>因此，面向对象可以帮助我们从宏观上把握、从整体上分析整个系统。 但是，具体到实现部分的微观操作(就是一个个方法)，仍然需要面向过程的思路去处理。</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>面向对象与面向对象是相辅相成的，面向对象离不开面向过程</li>
+<li>都是解决问题的思维方式，都是代码组织的方式</li>
+<li>解决简单问题可以使用面向过程</li>
+<li>解决复杂问题：宏观上使用面向对象把握，微观处理上仍然是面向过程</li>
+</ul>
+<p><del>和做饭神似，呸，你在FP</del></p>
+<p> 面向对象是盖浇饭、面向过程是蛋炒饭。盖浇饭的好处就是“菜”“饭”分离，从而提高了制作盖浇饭的灵活性。饭不满意就换饭，菜不满意换菜。用软件工程的专业术语就是“可维护性”比较好，“饭” 和“菜”的耦合度比较低</p>
+
       
 
       
@@ -244,7 +277,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
         		</li>
       		
 		</ul>
@@ -300,7 +337,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/02/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8C%E6%88%91%E7%94%A8python/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/21/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,7 +380,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向过程与面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向过程与面向对象</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -368,7 +405,7 @@ var _hmt = _hmt || [];
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/03/02/%E4%BA%BA%E7%94%9F%E8%8B%A6%E7%9F%AD%EF%BC%8C%E6%88%91%E7%94%A8python/",
+  id: "http://yoursite.com/2020/03/21/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/",
   owner: 'Wshangji',
   repo: 'comment',
   oauth: {
@@ -539,10 +576,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">素数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
@@ -551,11 +584,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">素数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
               </li>
             
             <div class="clearfix"></div>
