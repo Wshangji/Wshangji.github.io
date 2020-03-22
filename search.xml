@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>面向对象(3)</title>
+    <url>/2020/03/22/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-3/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>面向对象(2)</title>
     <url>/2020/03/22/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-2/</url>
     <content><![CDATA[<p><strong>对于一个类来说，一般有三种常见的成员：属性field、构造器constructor、方法method。这三种成员都可以定义零个或多个</strong></p>
