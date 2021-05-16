@@ -3,7 +3,14 @@
   <entry>
     <title>love</title>
     <url>/2021/04/13/love/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>My love for you exists in every bit of life,like this code</p>
+<a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123; <span class="comment">//你见，或者不见我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      me: &#123;        <span class="comment">//我就在那里</span></span><br><span class="line">         sad: <span class="literal">null</span>, <span class="comment">//不悲 不喜</span></span><br><span class="line">         happy: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123;    <span class="comment">//你念，或者不念我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      feeling: &#123;    <span class="comment">//情就在那里</span></span><br><span class="line">         left: <span class="number">0</span>,   <span class="comment">//不来 不去</span></span><br><span class="line">         right: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(loveMe || !loveMe) &#123;    <span class="comment">//你爱，或者不爱我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;     <span class="comment">//爱就在那里</span></span><br><span class="line">      love: <span class="literal">Infinity</span> <span class="comment">//不增不减</span></span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(withMe || !withMe) &#123;    <span class="comment">//你跟，或者不跟我</span></span><br><span class="line">   <span class="keyword">const</span> tomorrow = &#123; <span class="comment">//我的手就在你手里</span></span><br><span class="line">      we: myHands &amp;&amp; yourHands</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">Object</span>.freeze(tomorrow)    <span class="comment">//不舍不弃</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!myArms.has(you)) &#123;    <span class="comment">//来我的怀里</span></span><br><span class="line">   OR             <span class="comment">//或者</span></span><br><span class="line">   yourHeart.push(me) <span class="comment">//让我住进你的心里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>爱</tag>
+      </tags>
   </entry>
   <entry>
     <title>JVM、JRE和JDK</title>
