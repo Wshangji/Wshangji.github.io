@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,15 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - KAKU日常</title>
+  <title>c++&amp;vector - KAKU日常</title>
+  
+    <meta name="keywords" content="c++,STL">
   
 
+  
+    <meta name="description" content="在c++中，vector是一个十分有用的容器。
+作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。
+vector在C++标准模板库中的部分内容，它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。">
   
 
   <!-- feed -->
@@ -104,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -357,7 +361,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://bing.ioliu.cn/v1/rand?w=1920&h=1200"></div>
           
@@ -429,205 +433,267 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow">
-  
-  
-    <div class='pin'>
-      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
-    </div>
-  
-  
-  
-    
-    <h2 class="article-title" pin>
-      <a href="/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/">
-        博客重建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>博客声明</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
 
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        c++&vector
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="/images/avatar.webp">
+    <p>TongWY</p>
+  </a>
 </div>
 
-            </div>
           
         
-      
-    
-    
-      
+          
+            
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/13/love/">
-        love
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>My love for you exists in every bit of life,like this code</p>
-    
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Dec 3, 2019</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="c++&vector" data-path="/2019/12/03/c-vector/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-13</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <p>在c++中，vector是一个十分有用的容器。</p>
+<p>作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。</p>
+<p>vector在C++标准模板库中的部分内容，它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。</p>
+<span id="more"></span>
+
+<p><strong>特别注意：</strong></p>
+<p>使用vector需要注意以下几点：</p>
+<p>1.加入头文件<code>&lt;vector&gt;</code></p>
+<p>2.如果你要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低；</p>
+<p>3.Vector作为函数的参数或者返回值时，需要注意它的写法：</p>
+<p> ==double Distance(vector<int>&amp;a, vector<int>&amp;b) 其中的“&amp;”绝对不能少！！！==</p>
+<h2 id="一维vector"><a href="#一维vector" class="headerlink" title=" 一维vector"></a><center> 一维vector</center></h2><p><strong>创建一维vector：</strong></p>
+<pre><code>vector&lt;int&gt; nums;       //不指定长度
+vector&lt;int&gt; nums(n);    //指定长度为n</code></pre><p><strong>添加元素</strong></p>
+<pre><code>nums.push_back(1);      //直接从数组末端添加
+nums[i]=1;              //直接赋值给第i个位置
+nums.insert(nums.begin()+i,a);  //在第i+1个元素前插入a</code></pre><p><strong>删除元素</strong></p>
+<pre><code>nums.resize(nums.size-i);    //直接将数组长度减少，某种意义上删掉了后面i个
+nums.pop_back();             //删掉最后一个元素
+nums.erase(nums.begin()+i);  //删掉第i+1个元素
+nums.erase(nums.begin()+i,nums.end()+j);    //删除区间[i,j-1],区间从0开始
+nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
+<p>获取长度：nums.size();</p>
+<p>排序(O(nlogn))：sort(nums.begin(),nums.end());</p>
+<p>翻转：reverse(nums.begin(),nums.end());</p>
+<p>合并两个vector：合并nums1和nums2，并将合并的数组赋值给nums</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">nums1</span><span class="params">(m)</span>,<span class="title">nums2</span><span class="params">(n)</span></span>;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line">nums.<span class="built_in">resize</span>(m+n);</span><br><span class="line"><span class="built_in">merge</span>(nums1.<span class="built_in">begin</span>(),nums1.<span class="built_in">end</span>(),nums2.<span class="built_in">begin</span>(),nums2.<span class="built_in">end</span>(),nums);</span><br></pre></td></tr></table></figure>
+
+<h2 id="二维vector"><a href="#二维vector" class="headerlink" title="二维vector"></a><center>二维vector</center></h2><p><strong>创建M*n二维vector</strong></p>
+<pre><code>vector&lt; vector&lt;int&gt; &gt; nums(m,vector&lt;int&gt;(n));   //m*n的二维vector</code></pre><p>解释：</p>
+<p>定义了一个vector容器，元素类型为vector<int>，初始化为包含m个vector<int>对象，每个对象都是一个新创立的vector<int>对象的拷贝，而这个新创立的vector<int>对象被初始化为包含n个0。</p>
+<p>vector<int>(n)表示构造一个无名且含n个0的vector<int>对象。</p>
+<p><strong>动态创建m*n的二维vector</strong></p>
+<p>==方法一==</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;vector &lt;<span class="keyword">int</span>&gt; &gt; nums;<span class="number">3</span></span><br><span class="line"></span><br><span class="line">nums.<span class="built_in">resize</span>(m);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++) nums[i].<span class="built_in">resize</span>(n);</span><br></pre></td></tr></table></figure>
+
+<p>==方法二==</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;vector &lt;<span class="keyword">int</span>&gt; &gt; nums;</span><br><span class="line">nums.<span class="built_in">resize</span>(m,vector&lt;<span class="keyword">int</span>&gt;(n));</span><br></pre></td></tr></table></figure>
+<p><strong>初始化二维数组</strong></p>
+<pre><code>vector&lt;vector &lt;int&gt; &gt; nums(m ,vector&lt;int&gt;(n,0));    //m*n的二维vector，所有元素为0</code></pre><p>获得二维数组的行数：nums.size(); </p>
+<p>获得二维数组的列数：nums[0].size()；</p>
+<p><strong>数组遍历</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> m = nums.<span class="built_in">size</span>(),n = nums[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">        cout&lt;&lt;nums[i][j]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用vector还可以用结构体类型哟"><a href="#用vector还可以用结构体类型哟" class="headerlink" title="用vector还可以用结构体类型哟"></a><del>用vector还可以用结构体类型哟</del></h3>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/04/13/love/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2019/12/03/c-vector/>http://yoursite.com/2019/12/03/c-vector/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T22:08:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 19, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>c++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-    <h2 class="article-title" >
-      <a href="/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/">
-        JVM、JRE和JDK
-      </a>
-    </h2>
-  
-  <div class='md'>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/03/c-vector/&title=c++&vector - KAKU日常&summary=在c++中，vector是一个十分有用的容器。
+作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。
+vector在C++标准模板库中的部分内容，它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
     
-      <p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2019/12/03/c-vector/&title=c++&vector - KAKU日常&summary=在c++中，vector是一个十分有用的容器。
+作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。
+vector在C++标准模板库中的部分内容，它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/03/c-vector/&title=c++&vector - KAKU日常&summary=在c++中，vector是一个十分有用的容器。
+作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。
+vector在C++标准模板库中的部分内容，它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-04-11</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/'>
-            Read More
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/12/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%B0%8F%E7%BB%93/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>位运算小结</p>
+          <p class='content'>位运算主要包括按位与(&amp;)、按位或(|)、按位异或(^)、取反(~)、左移(&lt;&lt;)、右移(&gt;&gt;)这几种，其中除了取反(~)以外，其他的都是二目运算符，即要求运算符...</p>
+        </a>
+      
+      
+        <a class='next' href='/2019/11/26/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/'>
+          <p class='title'>排序之归并排序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>来说说归并排序是啥？归并排序就是排序呗。啥，啥排序？归并呗。 
+ 哔bibibi(瞎哔哔)
+
+好吧,归并排序，是创建在归并操作上的一种有效的排序算法，效率为O(nlogn)。1945年由约翰·冯...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/">
-        三行情话
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>螃蟹在剥我的壳，笔记本在写我</p>
-<p>漫天的我落在枫叶上、雪花上</p>
-<p>而你在想我      ————《武汉大学-三行情诗》</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -635,155 +701,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='/images/avatar.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>TongWY</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">KAKU日常</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:shangdtream@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Wshangji/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow blur desktop">
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%94%9F%E6%B4%BB/" href="/categories/%E7%94%9F%E6%B4%BB/"
-            id="categoriesE7949FE6B4BB"
-            ><div class='name'>生活</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4vector"><span class="toc-number">1.</span> <span class="toc-text"> 一维vector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4vector"><span class="toc-number">2.</span> <span class="toc-text">二维vector</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8vector%E8%BF%98%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E5%93%9F"><span class="toc-number">2.1.</span> <span class="toc-text">用vector还可以用结构体类型哟</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow blur desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/c/" style="font-size: 24px; color: #555">c++</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 14px; color: #999">位运算</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 21.5px; color: #666">排序</a> <a href="/tags/%E7%88%B1/" style="font-size: 14px; color: #999">爱</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px; color: #888">生活</a> <a href="/tags/%E7%B4%A0%E6%95%B0/" style="font-size: 16.5px; color: #888">素数</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 19px; color: #777">随笔</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow blur desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -792,21 +731,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="c++&amp;vector";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>

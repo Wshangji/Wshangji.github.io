@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - KAKU日常</title>
+  <title>素数，他，他又来了 - KAKU日常</title>
+  
+    <meta name="keywords" content="c++,素数">
   
 
+  
+    <meta name="description" content="是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)">
   
 
   <!-- feed -->
@@ -104,7 +106,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -357,7 +359,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://bing.ioliu.cn/v1/rand?w=1920&h=1200"></div>
           
@@ -429,205 +431,237 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow">
-  
-  
-    <div class='pin'>
-      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
-    </div>
-  
-  
-  
-    
-    <h2 class="article-title" pin>
-      <a href="/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/">
-        博客重建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>博客声明</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
 
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        素数，他，他又来了
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="/images/avatar.webp">
+    <p>TongWY</p>
+  </a>
 </div>
 
-            </div>
           
         
-      
-    
-    
-      
+          
+            
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/13/love/">
-        love
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>My love for you exists in every bit of life,like this code</p>
-    
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 10, 2019</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="素数，他，他又来了" data-path="/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-13</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <p>是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)</p>
+<span id="more"></span>
+
+<p>上次实际上是对单个数进行判断是否为素数，但是如果我们有一大堆素数，还用上次的方法的话，那么，，，一定很有趣。好吧我就直接说了，一大堆数进行判断，一个一个的进行循环无疑是很浪费时间的，那么我们就可以构建一个素数表，只需要判断一堆数是否在素数表里就可以了。</p>
+<p>有请第一位嘉宾——埃拉托斯特尼筛法(简称埃氏筛法)</p>
+<h3 id="埃氏筛法"><a href="#埃氏筛法" class="headerlink" title="埃氏筛法"></a>埃氏筛法</h3><p>首先，我们将2到n范围内的所有整数写下来。其中最小的数字2是素数。将表中所有2的倍数都划去。表中剩余的最小数字是3，它不能被更小的数整除，所以是素数。再将表中所有3的倍数都划去。依此类推，如果表中剩余的最小数字是m时，m就是素数。然后将表中所有m的倍数都化去。像这样反复操作，就能依次枚举n以内的素数。</p>
+<p>话不多说，上代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bool</span> u[MAXN];			<span class="comment">//定义一个筛子</span></span><br><span class="line"><span class="keyword">int</span> su[MAXN], num = <span class="number">0</span>;	<span class="comment">//定义一个素数表及表的长度</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prepare</span><span class="params">()</span> </span>&#123;		<span class="comment">//埃氏筛法函数</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; MAXN; i++)		<span class="comment">//进行数组初始化</span></span><br><span class="line">		u[i] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; MAXN; i++)			<span class="comment">//从2到MAXN进行循环</span></span><br><span class="line">		<span class="keyword">if</span> (u[i]) &#123;						<span class="comment">//一旦u[i]是素数，那么筛去它小于MAXN的所有倍数</span></span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">2</span>; i * j &lt; MAXN; j++)</span><br><span class="line">				u[i * j] = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; MAXN; i++)			<span class="comment">//将筛出的素数填入素数表中</span></span><br><span class="line">		<span class="keyword">if</span> (u[i])</span><br><span class="line">			su[++num] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面埃氏筛法中，大家有没有发现一个问题</p>
+<p>最小的素数是2，那么2的整数倍都不是素数，删去4,6,8…余下的数里，最小的素数是3，删去6,9,12…最终未被删去的数就是素数。但，这样在效率上有一个问题：一个数会被删去多次。例如42会被2 3 7都删去一遍，其时间复杂度为O(NlogNlogN)，，，所以，，，</p>
+<h3 id="有请欧拉上场"><a href="#有请欧拉上场" class="headerlink" title="有请欧拉上场"></a>有请欧拉上场</h3><p>对每个合数a×b，它会被每个质因数都筛去一遍，但我们只要用最小的质因数筛去就好了为此，我们需要记录下所产生的全部素数，上代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bool</span> u[MAXN];        <span class="comment">//筛子</span></span><br><span class="line"><span class="keyword">int</span> su[MAXN],num=<span class="number">0</span>;       <span class="comment">//创建素数表及表长</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">eulerSieve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(u,<span class="literal">true</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(u));       <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>; i&lt;=MAXN; i++)&#123;         <span class="comment">//顺序分析区间表中的每个数</span></span><br><span class="line">        <span class="keyword">if</span>(u[i])</span><br><span class="line">            su[++num]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=num; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i*su[j]&gt;MAXN)        <span class="comment">//如果i与当前素数的乘积大于MAXN，则跳过</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            u[i*su[j]]=<span class="literal">false</span>;       <span class="comment">//素数的倍数必为非素数，筛去</span></span><br><span class="line">            <span class="keyword">if</span>(i%su[j]==<span class="number">0</span>)          <span class="comment">//如果su[j]是i的最小素数，则进行下一个i的判断</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>核心就是：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(i%su[j]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>如果i能整除su[k]，说明su[k]是i的因子，所以su[k]也是i的任意倍数的因子。所以su[k]也是i×su[x] (x&gt;k)的因子。考虑到primelist单增，对i×su[x]，su[k]就是它的比su[x]更小的因子。故不用考虑其后的质因子了（i×su[x]会被su[k]作为因子在i更大时被筛掉）</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/04/13/love/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/>http://yoursite.com/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T22:07:20+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 19, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>c++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%B4%A0%E6%95%B0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>素数</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-    <h2 class="article-title" >
-      <a href="/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/">
-        JVM、JRE和JDK
-      </a>
-    </h2>
-  
-  <div class='md'>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/&title=素数，他，他又来了 - KAKU日常&summary=是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
     
-      <p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/&title=素数，他，他又来了 - KAKU日常&summary=是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/&title=素数，他，他又来了 - KAKU日常&summary=是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-04-11</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/'>
-            Read More
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>排序入坑之冒泡</p>
+          <p class='content'>算法入坑第一步，冒泡排序。搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧
+
+冒泡算法如果遇到相等的值不进行交换，那这种排序方式是稳定的排序方式。
+原理：比较...</p>
+        </a>
+      
+      
+        <a class='next' href='/2019/11/10/%E5%88%9D%E7%BA%A7%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD/'>
+          <p class='title'>初级素数判断<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这篇只是让大家初步了解如何判断素数，是最基础的内容，之后会讲一些欧拉，埃氏等素数筛的方法
+
+
+第一次的想法:==让它爆搜一遍不就好了== 爆搜大法好爆搜大法好
+
+具体实现就是让数n从2开始模,一...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/">
-        三行情话
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>螃蟹在剥我的壳，笔记本在写我</p>
-<p>漫天的我落在枫叶上、雪花上</p>
-<p>而你在想我      ————《武汉大学-三行情诗》</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -635,155 +669,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='/images/avatar.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>TongWY</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">KAKU日常</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:shangdtream@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Wshangji/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow blur desktop">
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%94%9F%E6%B4%BB/" href="/categories/%E7%94%9F%E6%B4%BB/"
-            id="categoriesE7949FE6B4BB"
-            ><div class='name'>生活</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">埃氏筛法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E8%AF%B7%E6%AC%A7%E6%8B%89%E4%B8%8A%E5%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">有请欧拉上场</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow blur desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/c/" style="font-size: 24px; color: #555">c++</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 14px; color: #999">位运算</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 21.5px; color: #666">排序</a> <a href="/tags/%E7%88%B1/" style="font-size: 14px; color: #999">爱</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px; color: #888">生活</a> <a href="/tags/%E7%B4%A0%E6%95%B0/" style="font-size: 16.5px; color: #888">素数</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 19px; color: #777">随笔</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow blur desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -792,21 +699,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="素数，他，他又来了";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>

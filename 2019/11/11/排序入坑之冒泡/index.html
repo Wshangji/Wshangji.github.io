@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - KAKU日常</title>
+  <title>排序入坑之冒泡 - KAKU日常</title>
+  
+    <meta name="keywords" content="c++,排序">
   
 
+  
+    <meta name="description" content="算法入坑第一步，冒泡排序。搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧">
   
 
   <!-- feed -->
@@ -104,7 +106,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -357,7 +359,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://bing.ioliu.cn/v1/rand?w=1920&h=1200"></div>
           
@@ -429,205 +431,270 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow">
-  
-  
-    <div class='pin'>
-      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
-    </div>
-  
-  
-  
-    
-    <h2 class="article-title" pin>
-      <a href="/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/">
-        博客重建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>博客声明</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
 
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        排序入坑之冒泡
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="/images/avatar.webp">
+    <p>TongWY</p>
+  </a>
 </div>
 
-            </div>
           
         
-      
-    
-    
-      
+          
+            
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/13/love/">
-        love
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>My love for you exists in every bit of life,like this code</p>
-    
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 11, 2019</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="排序入坑之冒泡" data-path="/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-13</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h3 id="算法入坑第一步，冒泡排序。"><a href="#算法入坑第一步，冒泡排序。" class="headerlink" title="算法入坑第一步，冒泡排序。"></a>算法入坑第一步，冒泡排序。</h3><p>搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧</p>
+<span id="more"></span>
+<h5 id="冒泡算法"><a href="#冒泡算法" class="headerlink" title="冒泡算法"></a>冒泡算法</h5><p><strong>如果遇到相等的值不进行交换，那这种排序方式是稳定的排序方式。</strong></p>
+<p>原理：比较两个相邻的元素，将值大的元素交换到右边</p>
+<p>思路：依次比较相邻的两个数，将比较小的数放在前面，比较大的数放在后面。</p>
+<ul>
+<li><p>第一次比较：首先比较第一和第二个数，将小数放在前面，将大数放在后面。</p>
+</li>
+<li><p>比较第2和第3个数，将小数 放在前面，大数放在后面。</p>
+<p>  ……</p>
+</li>
+<li><p>如此继续，知道比较到最后的两个数，将小数放在前面，大数放在后面，重复步骤，直至全部排序完成</p>
+</li>
+<li><p>在上面一趟比较完成后，最后一个数一定是数组中最大的一个数，所以在比较第二趟的时候，最后一个数是不参加比较的。</p>
+</li>
+<li><p>在第二趟比较完成后，倒数第二个数也一定是数组中倒数第二大数，所以在第三趟的比较中，最后两个数是不参与比较的。</p>
+</li>
+<li><p>依次类推，每一趟比较次数减少依次</p>
+</li>
+</ul>
+<p>举例：</p>
+<p>　　　　(1)要排序数组:[10,1,35,61,89,36,55]<br>　　　　(2)第一趟排序：</p>
+<p>　　　　　　第一次排序：10和1比较，10大于1，交换位置 　　 　  [1,10,35,61,89,36,55]</p>
+<p>　　　　　　第二次排序：10和35比较，10小于35，不交换位置　　[1,10,35,61,89,36,55]</p>
+<p>　　　　　　第三次排序：35和61比较，35小于61，不交换位置　　[1,10,35,61,89,36,55]</p>
+<p>　　　　　　第四次排序：61和89比较，61小于89，不交换位置　　[1,10,35,61,89,36,55]</p>
+<p>　　　　　　第五次排序：10和1比较，10大于1，交换位置 　　 　  [1,10,35,61,89,36,55]</p>
+<p>　　　　　　第六次排序：89和55比较，89大于55，交换位置　　　[1,10,35,61,36,55,89]</p>
+<p>　　　　　　第一趟总共进行了六次比较，排序结果：[1,10,35,61,36,55,89]</p>
+<p>　　　　(3)第二趟排序：</p>
+<p>　　　　　　第一次排序：1和10比较，1小于10，不交换位置　　[1,10,35,61,36,55,89]</p>
+<p>　　　　　　第二次排序：10和35比较，10小于35，不交换位置    [1,10,35,61,36,55,89]</p>
+<p>　　　　　　第三次排序：35和61比较，35小于61，不交换位置     [1,10,35,61,36,55,89]</p>
+<p>　　　　　　第四次排序：61和36比较，61大于36，交换位置　　　[1,10,35,36,61,55,89]</p>
+<p>　　　　　　第五次排序：61和55比较，61大于55，交换位置　　　[1,10,35,36,55,61,89]</p>
+<p>　　　　　　第二趟总共进行了5次比较，排序结果：[1,10,35,36,55,61,89]</p>
+<p>　　　　(4)第三趟排序：</p>
+<p>　　　　　　第一次排序：1和10比较，1小于10，不交换位置　　[1,10,35,36,55,61,89]</p>
+<p>　　　　　　第二次排序：10和35比较，10小于35，不交换位置    [1,10,35,36,55,61,89]</p>
+<p>　　　　　　第三次排序：35和36比较，35小于36，不交换位置     [1,10,35,36,55,61,89]</p>
+<p>　　　　　　第四次排序：36和61比较，36小于61，不交换位置　　　1,10,35,36,55,61,89</p>
+<p>　　　　　　第三趟总共进行了4次比较，排序结果：1,10,35,36,55,61,89</p>
+<p>　　　　　　到目前位置已经为有序的情形了。　　　　</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span>    <span class="comment">//下面是函数sort的程序 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,temp;    <span class="comment">//定义三个整型变量 </span></span><br><span class="line">    <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)    <span class="comment">//用一个嵌套循环来遍历一遍每一对相邻元素 （所以冒泡函数慢嘛，时间复杂度高）  </span></span><br><span class="line">    &#123;                           </span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>-j;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i]&gt;a[i+<span class="number">1</span>])  <span class="comment">//从大到小排就把左边的&quot;&gt;&quot;改为&quot;&lt;&quot;</span></span><br><span class="line">            &#123;</span><br><span class="line">                temp=a[i];      <span class="comment">//a[i]与a[i+1](即a[i]后面那个) 交换</span></span><br><span class="line">                a[i]=a[i+<span class="number">1</span>];    <span class="comment">//基本的交换原理&quot;c=a;a=b;b=c&quot; </span></span><br><span class="line">                a[i+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.算法分析：</p>
+<p>　　　　(1)由此可见：N个数字要排序完成，总共进行N-1趟排序，每i趟的排序次数为(N-i)次，所以可以用双重循环语句，外层控制循环多少趟，内层控制每一趟的循环次数</p>
+<p>　　　　(2)冒泡排序的优点：每进行一趟排序，就会少比较一次，因为每进行一趟排序都会找出一个较大值。如上例：第一趟比较之后，排在最后的一个数一定是最大的一个数，第二趟排序的时候，只需要比较除了最后一个数以外的其他的数，同样也能找出一个最大的数排在参与第二趟比较的数后面，第三趟比较的时候，只需要比较除了最后两个数以外的其他的数，以此类推……也就是说，没进行一趟比较，每一趟少比较一次，一定程度上减少了算法的量。<br>　　　　<br>　　　　(3)时间复杂度</p>
+<p>　　　　1.如果我们的数据正序，只需要走一趟即可完成排序。所需的比较次数C和记录移动次数M均达到最小值，即：Cmin=n-1;Mmin=0;所以，冒泡排序最好的时间复杂度为O(n)。</p>
+<p>　　　　2.如果很不幸我们的数据是反序的，则需要进行n-1趟排序。每趟排序要进行n-i次比较(1≤i≤n-1)，且每次比较都必须移动记录三次来达到交换记录位置。在这种情况下，比较和移动次数均达到最大值：</p>
+<p>　　　　　　综上所述：冒泡排序总的平均时间复杂度为：O(n2) ,时间复杂度和数据状况无关。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/04/13/love/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/>http://yoursite.com/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T22:06:31+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 19, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>c++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8E%92%E5%BA%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>排序</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-    <h2 class="article-title" >
-      <a href="/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/">
-        JVM、JRE和JDK
-      </a>
-    </h2>
-  
-  <div class='md'>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/&title=排序入坑之冒泡 - KAKU日常&summary=算法入坑第一步，冒泡排序。搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
     
-      <p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/&title=排序入坑之冒泡 - KAKU日常&summary=算法入坑第一步，冒泡排序。搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/&title=排序入坑之冒泡 - KAKU日常&summary=算法入坑第一步，冒泡排序。搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-04-11</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/'>
-            Read More
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/11/11/flybird/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>flybird</p>
+          <p class='content'>一个简单的C++小游戏
+
+
+代码如下：#include &lt;algorithm&gt;#include &lt;conio.h&gt;#include &lt;cstdio&gt;#incl...</p>
+        </a>
+      
+      
+        <a class='next' href='/2019/11/10/%E7%B4%A0%E6%95%B0%EF%BC%8C%E4%BB%96%EF%BC%8C%E4%BB%96%E5%8F%88%E6%9D%A5%E4%BA%86/'>
+          <p class='title'>素数，他，他又来了<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>是他，是他，就是他，我们的…咳咳，走错片场了。一大堆素数朝你涌来，感谢埃拉托斯特尼，感谢欧拉(其实一点也不╮(╯▽╰)╭)
+
+
+上次实际上是对单个数进行判断是否为素数，但是如果我们有一大堆素数，...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/">
-        三行情话
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>螃蟹在剥我的壳，笔记本在写我</p>
-<p>漫天的我落在枫叶上、雪花上</p>
-<p>而你在想我      ————《武汉大学-三行情诗》</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -635,155 +702,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='/images/avatar.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>TongWY</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">KAKU日常</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:shangdtream@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Wshangji/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow blur desktop">
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%94%9F%E6%B4%BB/" href="/categories/%E7%94%9F%E6%B4%BB/"
-            id="categoriesE7949FE6B4BB"
-            ><div class='name'>生活</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%85%A5%E5%9D%91%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">算法入坑第一步，冒泡排序。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E7%AE%97%E6%B3%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">冒泡算法</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow blur desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/c/" style="font-size: 24px; color: #555">c++</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 14px; color: #999">位运算</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 21.5px; color: #666">排序</a> <a href="/tags/%E7%88%B1/" style="font-size: 14px; color: #999">爱</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 16.5px; color: #888">生活</a> <a href="/tags/%E7%B4%A0%E6%95%B0/" style="font-size: 16.5px; color: #888">素数</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 19px; color: #777">随笔</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow blur desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-      <img src='/null'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -792,21 +732,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="排序入坑之冒泡";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
