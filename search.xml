@@ -1,129 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>love</title>
-      <link href="2021/04/13/love/"/>
-      <url>2021/04/13/love/</url>
-      
-        <content type="html"><![CDATA[<p>My love for you exists in every bit of life,like this code</p><a id="more"></a><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123; <span class="comment">//你见，或者不见我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      me: &#123;        <span class="comment">//我就在那里</span></span><br><span class="line">         sad: <span class="literal">null</span>, <span class="comment">//不悲 不喜</span></span><br><span class="line">         happy: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123;    <span class="comment">//你念，或者不念我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      feeling: &#123;    <span class="comment">//情就在那里</span></span><br><span class="line">         left: <span class="number">0</span>,   <span class="comment">//不来 不去</span></span><br><span class="line">         right: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(loveMe || !loveMe) &#123;    <span class="comment">//你爱，或者不爱我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;     <span class="comment">//爱就在那里</span></span><br><span class="line">      love: <span class="literal">Infinity</span> <span class="comment">//不增不减</span></span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(withMe || !withMe) &#123;    <span class="comment">//你跟，或者不跟我</span></span><br><span class="line">   <span class="keyword">const</span> tomorrow = &#123; <span class="comment">//我的手就在你手里</span></span><br><span class="line">      we: myHands &amp;&amp; yourHands</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">Object</span>.freeze(tomorrow)    <span class="comment">//不舍不弃</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!myArms.has(you)) &#123;    <span class="comment">//来我的怀里</span></span><br><span class="line">   OR             <span class="comment">//或者</span></span><br><span class="line">   yourHeart.push(me) <span class="comment">//让我住进你的心里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 爱 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JVM、JRE和JDK</title>
-      <link href="2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/"/>
-      <url>2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/</url>
-      
-        <content type="html"><![CDATA[<p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p><a id="more"></a><p><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494836063440655.png" alt="Alt Java"></p><p>JVM(Java Virtual Machine)就是一个虚拟的用于执行bytecode字节码的”虚拟计算机”。他也定义了指令集、寄存器集、结构栈、垃圾收集堆、内存区域。JVM负责将Java字节码解释运行，边解释边运行，这样，速度就会受到一定的影响。</p><p>不同的操作系统有不同的虚拟机。Java 虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 Java虚拟机是实现跨平台的核心机制。如图所示：<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837984812122.png" alt="Alt JVM"></p><p>Java Runtime Environment (JRE) 包含：Java虚拟机、库函数、运行Java应用程序所必须的文件。</p><p>Java  Development Kit (JDK)包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。</p><p>JDK、JRE和JVM的关系如图所示。<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837979897855.png" alt="Alt 关系图"></p><p>  ·如果只是要运行Java程序，只需要JRE就可以。JRE通常非常小，其中包含了JVM。</p><p>  ·如果要开发Java程序，就需要安装JDK。</p><p><strong>Java环境搭建</strong></p><p>下载JDK<br>    下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">www.oracle.com/technetwork/java/javase/downloads/index.html</a></p><p>点击下载JDK，会出现下载列表界面。首先，点击”Accept License Agreement”，然后选择对应的版本，下载即可。</p><p>注意：<br>    32位操作系统只能安装32位JDK；<br>    64位操作系统可安装32位JDK，也可以安装64位JDK。</p><p>安装JDK</p><p>安装过程和普通软件安装没什么区别，过程中会让你选择JDK和JRE安装目录，采用默认即可。也就是说，通通点击“下一步”就能完成安装。<br>安装成功后我们再进入JDK的安装目录，可以看到如下的结构：<br>其中：</p><pre><code>bin目录是存储一些可执行的二进制文件；lib存储相关jar包；src.zip是JDK相关JAVA类的源代码。</code></pre><p><strong>环境变量Path的配置</strong><br>&emsp;&emsp;环境变量是在操作系统中一个具有特定名字的对象， 它包含了一个或者多个应用程序所将使用到的信息。</p><p>&emsp;&emsp;Path是一个常见的环境变量，它告诉操作系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下寻找此程序外，还应到哪些目录下寻找。</p><p>设置Parh环境变量：</p><ol><li><p>右键计算机——&gt;属性——&gt;高级系统设置<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838772220505.png" alt="Alt 1"></p></li><li><p>单击环境变量按钮<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838780549127.png" alt="Alt 2"></p></li><li><p>单击新建按钮，新建JAVA_HOME变量（用于说明JDK的安装目录）<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838787522279.png" alt="Alt 3"></p></li><li><p>修改系统环境变量Path，在最前面追加%JAVA_HOME%\bin  并以;和原路径分隔。再增加：“.;”。这是表示当前目录的意思<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838936169679.png" alt="Alt 4"></p></li></ol><p>注意：</p><pre><code>此处一定是英文分号而不是中文分号！！！classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境变量！JRE会自动搜索当前路径下的类文件及相关jar文件</code></pre><hr><p>2021-04-11注：目前从Oracle下载的jdk安装程序，安装完成以后无需配置环境变量，安装过程中会自动配置完成</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>三行情话</title>
-      <link href="2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/"/>
-      <url>2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/</url>
-      
-        <content type="html"><![CDATA[<p>螃蟹在剥我的壳，笔记本在写我</p><p>漫天的我落在枫叶上、雪花上</p><p>而你在想我      ————《武汉大学-三行情诗》</p><a id="more"></a><h4 id="有一种理解"><a href="#有一种理解" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是最美好的一种解释，即全文主宾倒装</p><p>我在剥螃蟹的壳、写笔记本，枫叶、雪花落在我上，而我在…</p><h4 id="有一种理解-1"><a href="#有一种理解-1" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是对情感的绝望，即全文否定</p><p>螃蟹不可能在剥我的壳，笔记本不可能在写我，我不可能落在枫叶上、雪花上，而你也不可能在想我</p><h4 id="有一种理解-2"><a href="#有一种理解-2" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是一种自欺欺人</p><p>只有当在螃蟹在剥我的壳，笔记本写我，我落在枫叶上、雪花上的时候，你才会想我</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>博客重建</title>
+    <url>/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/</url>
+    <content><![CDATA[<p>博客声明</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>由于当时重新配置个人电脑，所以重装了系统，后来其它事情多了起来（其实主要就是懒），就没再维护这个博客，最近一段时间发生了很多事，所以产生了从头再来的想法，并且<code>最新内容</code>以及<code>个人生活</code>、<code>文笔</code>将优先从本站发布，其它平台将陆续更新，并且某些平台将暂停使用（<em>注：版式将暂时沿用原有主题，有空会考虑自建一个主题使用</em>）</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>将舍弃以前大部分文章，从新开始写，并且整理成为专栏，可通过查看tags的方式找到某一系列文章，并且考虑在日后加入开源项目池，而且秉持技术开源思想，希望能与大佬多多交流</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>如果有想法想与我交流，可通过GitHub站内信的形式，如果你也觉得我做的不错，希望能给我点亮一个star</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>人生路不长，别再等以后(转载)</title>
+    <url>/2019/11/12/%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%8D%E9%95%BF%EF%BC%8C%E5%88%AB%E5%86%8D%E7%AD%89%E4%BB%A5%E5%90%8E-%E8%BD%AC%E8%BD%BD/</url>
+    <content><![CDATA[<center>一辈子很短，短得来不及细算</center> 
+
+<span id="more"></span>
+
+<center></center****> 
+
+<p>童年，不知不觉没了<br>青春，不知不觉没了<br>而那些无忧无虑的快乐<br>好像也消失不见了<br>一辈子三万天而已<br>没有你想得那么长<br>有什么心愿，快点实现<br>有什么目标，快点奋战<br>别等来等去<br>等来了年龄增长<br>等来了热情褪去<br>人生不是花，败了再开<br>身体不是叶，落了再生<br>我们每个人<br>都只有一次人生，只有一个身体<br>生病不能等，健康没了，人就完了<br>人生不能等，时间过了，人就终了<br>一辈子不长，别再等以后<br>想吃的东西，去吃<br>想做的事情，趁早<br>想要的感情，去追<br>想去的地方，快去<br>别一等再等<br>等牙没有了，想吃就难了<br>等人离开了，想爱就晚了<br>一辈子很短，这一生短暂<br>时间不等人，岁月不等你<br>趁我们都还活着<br>对父母，孝顺点，对爱人，珍惜点<br>对朋友，真心点，对自己，好一点</p>
+<p>```</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
       <categories>
-          
-          <category> 生活 </category>
-          
+        <category>随笔</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客重建</title>
-      <link href="2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/"/>
-      <url>2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/</url>
-      
-        <content type="html"><![CDATA[<p>博客声明</p><a id="more"></a><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>由于当时重新配置个人电脑，所以重装了系统，后来其它事情多了起来（其实主要就是懒），就没再维护这个博客，最近一段时间发生了很多事，所以产生了从头再来的想法，并且<code>最新内容</code>以及<code>个人生活</code>、<code>文笔</code>将优先从本站发布，其它平台将陆续更新，并且某些平台将暂停使用（<em>注：版式将暂时沿用原有主题，有空会考虑自建一个主题使用</em>）</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>将舍弃以前大部分文章，从新开始写，并且整理成为专栏，可通过查看tags的方式找到某一系列文章，并且考虑在日后加入开源项目池，而且秉持技术开源思想，希望能与大佬多多交流</p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>如果有想法想与我交流，可通过GitHub站内信的形式，如果你也觉得我做的不错，希望能给我点亮一个star</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>世界上没那么多错过</title>
-      <link href="2020/02/03/%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B2%A1%E9%82%A3%E4%B9%88%E5%A4%9A%E9%94%99%E8%BF%87/"/>
-      <url>2020/02/03/%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B2%A1%E9%82%A3%E4%B9%88%E5%A4%9A%E9%94%99%E8%BF%87/</url>
-      
-        <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">你猜</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="0f849ef2fc8d1597d34686279ccc98f05de6b0ced3f51cccfcb11ae354299c70">7b29d0a631112d04bf37b1af3a35e3292b3400ccda167b195ea76f104aff834d7e444052bfdf1fb403ce7e9dc2e022976f018339b0c482079d78d3eb38194855b0e839766c8e4a80587500a1c7cf95d55a774d4f17c389844af46d2371000fdce352d67b4b1184bf4f44f86712b3e3a3516ec5d5060c839cfc4c6840a6c0f21c00ca398d03a358b28ca3142ef170cfd5d18ecfd79f8419b6d197684c86da7839ac52ab6f976483102a8ab381b43105d8c94b09e869f9940ca7c3a305396c88568bf5beae18c95f039e1445c0a936485024d94043f0acb508a254e629989d5a544dddacce8053c3b52092d2c2bf576261034cf366d7c79bdc043083b2639199583a611d3fb27709d4e96d00fe4e06685de5434720c84f4e37561ba7a431c23b09b1d3f37789ddb01cb14efba564050b941ce48f2fb44322c5400eb5d7604e3e22c92dc9b51677eef0cc9bc11f043a8b70339e2d0982c155c0e9225b5150d68311eaa2faa4fdb2e5c40f83217657f59c05b64abf087fbf83d47085cc86d00d541e112d837446c92002ea994c5983e2d8ea4956811415ab1997276edceb52f93ab17ff83d84c6a0069077804bcbaf3d62c3d7f814f38f91853070fa1a1fa5e3ebe6340ee14dc69924a67de03abb84107687cacb0d9eec57ced89394d534e83f8cba3ebc51a680ebbf6e0684c9c341e69afdcc6babe836a0f6aa10337f550e8bab6152262f5fac9d6ac14f1f0058e5fa43974dadb4f4fecddf24fe9bd16c0a0819b3f5f72cf29018e5cd511c0c36c375ecc8c50e4cdf8b38b6955ef855095bea05df266b3919910136bf4e353ae81a811149720c30963e4e5ac0af84fae6c8c2ce2c6a46b64ff98b5fbe709e999a3a3dec26ca60cfe7241b66e44d6a0b91490f8d1c20e841e7e3918614fe77c8e45f26bc1d7c7a75ddb178fc5f177367341e84f391f46bff60b4a03ba1bcc733e328492f2b757b760eb5e56a4673da2ca2ab0da026eebe180128c888938c15b9bb7b1892098839f222a678c0a97ef24f4f556dbbbe79de50f565be4395f1702964176336b29ed522f23d517ee93b31e2d0567483783906c9ca06b1b50de621de036aaefadbf1870d97ca5896bfd9839600452634e959a77d1fb37f96b2feed0ca08727480763a907b165ff8e2a658c9a85584300a47194accaf7f9e2a7caae4184f2215146b98e6d69b6f0694b9bbd32903703db105cf5cc13eb3ecdcce601245815342401f2aeff33294af98aa7da024e24b2a2d76188fe214d0dca110a523bca9d5819fb46e770e83c1770083aef4163e78d8b3deeb4775c5c8e4cb451a18d59b32ef2df</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>人生路不长，别再等以后(转载)</title>
-      <link href="2019/11/12/%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%8D%E9%95%BF%EF%BC%8C%E5%88%AB%E5%86%8D%E7%AD%89%E4%BB%A5%E5%90%8E-%E8%BD%AC%E8%BD%BD/"/>
-      <url>2019/11/12/%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%8D%E9%95%BF%EF%BC%8C%E5%88%AB%E5%86%8D%E7%AD%89%E4%BB%A5%E5%90%8E-%E8%BD%AC%E8%BD%BD/</url>
-      
-        <content type="html"><![CDATA[<center>一辈子很短，短得来不及细算</center> <a id="more"></a><center></center****> <p>童年，不知不觉没了<br>青春，不知不觉没了<br>而那些无忧无虑的快乐<br>好像也消失不见了<br>一辈子三万天而已<br>没有你想得那么长<br>有什么心愿，快点实现<br>有什么目标，快点奋战<br>别等来等去<br>等来了年龄增长<br>等来了热情褪去<br>人生不是花，败了再开<br>身体不是叶，落了再生<br>我们每个人<br>都只有一次人生，只有一个身体<br>生病不能等，健康没了，人就完了<br>人生不能等，时间过了，人就终了<br>一辈子不长，别再等以后<br>想吃的东西，去吃<br>想做的事情，趁早<br>想要的感情，去追<br>想去的地方，快去<br>别一等再等<br>等牙没有了，想吃就难了<br>等人离开了，想爱就晚了<br>一辈子很短，这一生短暂<br>时间不等人，岁月不等你<br>趁我们都还活着<br>对父母，孝顺点，对爱人，珍惜点<br>对朋友，真心点，对自己，好一点</p><p>```</p><h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
-      
-      
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三行情话</title>
+    <url>/2021/04/10/%E4%B8%89%E8%A1%8C%E6%83%85%E8%AF%97/</url>
+    <content><![CDATA[<p>螃蟹在剥我的壳，笔记本在写我</p>
+<p>漫天的我落在枫叶上、雪花上</p>
+<p>而你在想我      ————《武汉大学-三行情诗》</p>
+<span id="more"></span>
+
+<h4 id="有一种理解"><a href="#有一种理解" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是最美好的一种解释，即全文主宾倒装</p>
+<p>我在剥螃蟹的壳、写笔记本，枫叶、雪花落在我上，而我在…</p>
+<h4 id="有一种理解-1"><a href="#有一种理解-1" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是对情感的绝望，即全文否定</p>
+<p>螃蟹不可能在剥我的壳，笔记本不可能在写我，我不可能落在枫叶上、雪花上，而你也不可能在想我</p>
+<h4 id="有一种理解-2"><a href="#有一种理解-2" class="headerlink" title="有一种理解"></a>有一种理解</h4><p>也是一种自欺欺人</p>
+<p>只有当在螃蟹在剥我的壳，笔记本写我，我落在枫叶上、雪花上的时候，你才会想我</p>
+]]></content>
       <categories>
-          
-          <category> 随笔 </category>
-          
+        <category>生活</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JVM、JRE和JDK</title>
+    <url>/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/</url>
+    <content><![CDATA[<p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
+<span id="more"></span>
+<p><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494836063440655.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494836063440655.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt Java"></p>
+<p>JVM(Java Virtual Machine)就是一个虚拟的用于执行bytecode字节码的”虚拟计算机”。他也定义了指令集、寄存器集、结构栈、垃圾收集堆、内存区域。JVM负责将Java字节码解释运行，边解释边运行，这样，速度就会受到一定的影响。</p>
+<p>不同的操作系统有不同的虚拟机。Java 虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 Java虚拟机是实现跨平台的核心机制。如图所示：<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837984812122.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837984812122.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt JVM"></p>
+<p>Java Runtime Environment (JRE) 包含：Java虚拟机、库函数、运行Java应用程序所必须的文件。</p>
+<p>Java  Development Kit (JDK)包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。</p>
+<p>JDK、JRE和JVM的关系如图所示。<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837979897855.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494837979897855.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt 关系图"></p>
+<p>  ·如果只是要运行Java程序，只需要JRE就可以。JRE通常非常小，其中包含了JVM。</p>
+<p>  ·如果要开发Java程序，就需要安装JDK。</p>
+<p><strong>Java环境搭建</strong></p>
+<p>下载JDK<br>    下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<p>点击下载JDK，会出现下载列表界面。首先，点击”Accept License Agreement”，然后选择对应的版本，下载即可。</p>
+<p>注意：<br>    32位操作系统只能安装32位JDK；<br>    64位操作系统可安装32位JDK，也可以安装64位JDK。</p>
+<p>安装JDK</p>
+<p>安装过程和普通软件安装没什么区别，过程中会让你选择JDK和JRE安装目录，采用默认即可。也就是说，通通点击“下一步”就能完成安装。<br>安装成功后我们再进入JDK的安装目录，可以看到如下的结构：<br>其中：</p>
+<pre><code>bin目录是存储一些可执行的二进制文件；
+
+lib存储相关jar包；
+
+src.zip是JDK相关JAVA类的源代码。</code></pre><p><strong>环境变量Path的配置</strong><br>&emsp;&emsp;环境变量是在操作系统中一个具有特定名字的对象， 它包含了一个或者多个应用程序所将使用到的信息。</p>
+<p>&emsp;&emsp;Path是一个常见的环境变量，它告诉操作系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下寻找此程序外，还应到哪些目录下寻找。</p>
+<p>设置Parh环境变量：</p>
+<ol>
+<li><p>右键计算机——&gt;属性——&gt;高级系统设置<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838772220505.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838772220505.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt 1"></p>
+</li>
+<li><p>单击环境变量按钮<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838780549127.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838780549127.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt 2"></p>
+</li>
+<li><p>单击新建按钮，新建JAVA_HOME变量（用于说明JDK的安装目录）<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838787522279.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838787522279.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt 3"></p>
+</li>
+<li><p>修改系统环境变量Path，在最前面追加%JAVA_HOME%\bin  并以;和原路径分隔。再增加：“.;”。这是表示当前目录的意思<br><img src="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838936169679.png" class="lazyload" data-srcset="https://www.sxt.cn/360shop/Public/admin/UEditor/20170515/1494838936169679.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Alt 4"></p>
+</li>
+</ol>
+<p>注意：</p>
+<pre><code>此处一定是英文分号而不是中文分号！！！
+
+classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境变量！JRE会自动搜索当前路径下的类文件及相关jar文件</code></pre><hr>
+<p>2021-04-11注：目前从Oracle下载的jdk安装程序，安装完成以后无需配置环境变量，安装过程中会自动配置完成</p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>世界上没那么多错过</title>
+    <url>/2020/02/03/%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B2%A1%E9%82%A3%E4%B9%88%E5%A4%9A%E9%94%99%E8%BF%87/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="f0883e4a2eb1aa1381b3ba18f0ff3a6c51e49fa31e82c87cb9cf7bd705157243">6de660ac7b4e1815a73b127ec3abb05f51924f2811536e1624e23d55841dcfc3b15b449442c5c9931bd4010101b285b6b9b8e00c5d4344e2d3d77d2995b1c79a830705f1c6dfaa178056ed6a45908020f375498dd1050e1269dde668b04939d41aa33660746b2dc957b8989f7d9cd9c069bebcba9ba98ed6c7b0d1bdbdd5b8e5f2642d08b81bccf7225d9cde4b89eadece8fc5458c9b628cc4f27097c519b0ab5976bf641ccecdbd380fe9793d772e4284e5259d13008906d713f0df100eb9ee439dc69758c863877cd3856afc46e7bbbec1bbf00c38b1dd252e973abee74deb9d0886049447f8980e3bb31d77639b1b92269a7a2441752826401112cb60ccbc370b9fd7620d0ab8db6a40cc6a45b3aeb0117086cae0cee2e2673a38b4780ec4cb935ea2d2bb25f54a1414b38905aa07315b5875aec77880c545c4f4317ce41873e8edcf5167a95589b72547ef266fb1770e7eec99bb5b092300bdb094d1020d6cc0542c81fc94813cfbc8736a41a4fd38bfdbac53947c30a3d22f1ec3f759b4418cc66c45dfb0fc155b100b3ace70b0adf8ce69b5ba70b7f8862c5e782cfa384fc31025e2fdd92a4296fc023420d1372372ae8f542c0d7355b308b7e2df755d0ebc23c08ac15d8b52ce64e547854dd6b136ef20204a037745647b5a102c2b6f4d7669ca79545ec8685c57fcdf805941610af5328c9e743c338c29f5f47f7be1acc7753e3b0b487e3d870d406575a4304010430744f4a6b4a393a73b74819447c18db3208ea308343d4f67125626618aac8c8e011ee9ca77a59fab83d3e8f01b4856deba7addceb238b2f87164e4bed64060ddabf148e089baa4a07f0447199e8362df71b101aa1863aa38958920175a4b80b772dc103d09eaaa0191e7a076941f111ed06b1cc107f542b1910b3f8818790f3b8ab14d78989a29c63ee434677b1280eb853a6ec1309ad34cedba19091b4bc36cd447b97c455f62a4d059b7a85d4d71935b76f36bcac3ae1015fea0c5571e39bdf51947d9b569da0841631594c6e22449c8d288977d2a5c75eea45e55396023e4d76dce3c26dce4698798637a0839e6fe3eaabf1dde8efa542c6c4aac682f7ca02f56d9d3d4477c6e78c908a8e61657d2d836c5f6b9a7901a8fb4636ebd3fb5ceae5522df6e05fb3bea5683353233de3d49e1f34333a872fd1a421603360730620a28a96e7b6ded2f34074f3ef455a9cd748483522d88962824c057350ed347984441cbae34fff44b537def5a0a175a6238dbca14270a6ef0a468efee1bc27f62f3af422502152535e0eaa2f226ce12e3bd94b934db39a2c858a2ceadcae250ba0ad129574a40d9f3ebf300d9af740b53ad028451d83a59f2a8536636a7</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你猜</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>love</title>
+    <url>/2021/04/13/love/</url>
+    <content><![CDATA[<p>My love for you exists in every bit of life,like this code</p>
+<span id="more"></span>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123; <span class="comment">//你见，或者不见我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      <span class="attr">me</span>: &#123;        <span class="comment">//我就在那里</span></span><br><span class="line">         <span class="attr">sad</span>: <span class="literal">null</span>, <span class="comment">//不悲 不喜</span></span><br><span class="line">         <span class="attr">happy</span>: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123;    <span class="comment">//你念，或者不念我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      <span class="attr">feeling</span>: &#123;    <span class="comment">//情就在那里</span></span><br><span class="line">         <span class="attr">left</span>: <span class="number">0</span>,   <span class="comment">//不来 不去</span></span><br><span class="line">         <span class="attr">right</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(loveMe || !loveMe) &#123;    <span class="comment">//你爱，或者不爱我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;     <span class="comment">//爱就在那里</span></span><br><span class="line">      <span class="attr">love</span>: <span class="literal">Infinity</span> <span class="comment">//不增不减</span></span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(withMe || !withMe) &#123;    <span class="comment">//你跟，或者不跟我</span></span><br><span class="line">   <span class="keyword">const</span> tomorrow = &#123; <span class="comment">//我的手就在你手里</span></span><br><span class="line">      <span class="attr">we</span>: myHands &amp;&amp; yourHands</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">Object</span>.freeze(tomorrow)    <span class="comment">//不舍不弃</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!myArms.has(you)) &#123;    <span class="comment">//来我的怀里</span></span><br><span class="line">   OR             <span class="comment">//或者</span></span><br><span class="line">   yourHeart.push(me) <span class="comment">//让我住进你的心里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>爱</tag>
+      </tags>
+  </entry>
 </search>
