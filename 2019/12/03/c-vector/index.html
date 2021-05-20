@@ -825,7 +825,7 @@ vector在C++标准模板库中的部分内容，它是一个多功能的，能�
       
     
       
-        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
@@ -837,9 +837,9 @@ vector在C++标准模板库中的部分内容，它是一个多功能的，能�
       
     
       
-        Use
+        本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1" target="_blank" class="codename">Volantis</a>
-        as theme
+        作为主题
       
     
       
@@ -1051,12 +1051,12 @@ var loadCSS = function( href, before, media, attributes ){
   <div id="rightmenu-wrapper">
     <ul class="list-v rightmenu" id="rightmenu-content">
       <li class='option'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>Copy Text</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
         <hr id='hr-text'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
         <hr id='hr-href'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
         <hr id='hr-src'>
       </li>
       
@@ -1473,7 +1473,46 @@ var loadCSS = function( href, before, media, attributes ){
   });
   volantis.pjax.push(pjax_valine);
 </script>
+<script>
+  var pushLink ="https://push.xuthus.cc/send/b7b853b4047aa832a6f640685aff685a";
+  var siteName = "TongWY's blog";
+  var valineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+  var title = siteName + "上又有新评论啦~!\n";
 
+  function send_valine() {
+    //获取元素信息
+    var pagename = document.title;
+    var pageurl = document.URL;
+    var pushtime = new Date();
+    var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+    content =
+      title +
+      "昵称：" + vnick +
+      "\n邮箱：" + vmail +
+      "\n网站地址：" + vlink +
+      "\n文章标题：" + pagename +
+      "\n评论内容：" + veditor +
+      "\n文章链接：" + pageurl +
+      "\n评论时间" + pushtime.toLocaleString() + "\n";
+    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+    httpRequest.open("POST", pushLink, true); //第二步：打开连接
+    httpRequest.setRequestHeader(
+      "Content-type",
+      "application/json"
+    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(content); //发送请求 
+  }
+
+  document.body.addEventListener('click', function(e) {
+  if(e.target.className.indexOf('vsubmit') === -1) {
+    return;
+  }
+  send_valine();
+})
+</script>
 
 
 
