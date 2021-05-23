@@ -187,6 +187,26 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
       </tags>
   </entry>
   <entry>
+    <title>初级素数判断</title>
+    <url>/2019/11/10/%E5%88%9D%E7%BA%A7%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD/</url>
+    <content><![CDATA[<p>这篇只是让大家初步了解如何判断素数，是最基础的内容，之后会讲一些欧拉，埃氏等素数筛的方法</p>
+<span id="more"></span>
+
+<h6 id="第一次的想法"><a href="#第一次的想法" class="headerlink" title="第一次的想法:"></a>第一次的想法:</h6><p>==让它爆搜一遍不就好了== <del>爆搜大法好爆搜大法好</del></p>
+<blockquote>
+<p>具体实现就是让数n从2开始模,一直模到n-1,如果都不能被整除,那就是素数<strong>紧扣定义</strong></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//判断是否是素数1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;please inpout a number.&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; m; ++i)</span><br><span class="line">        <span class="keyword">if</span> (m%i == <span class="number">0</span>) &#123;</span><br><span class="line">            cout &lt;&lt; m &lt;&lt; <span class="string">&quot; isn&#x27;t a prime\n&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    cout &lt;&lt; m &lt;&lt; <span class="string">&quot; is a prime\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这么复杂,那来进行下简单优化:<br>如果一个数有因子的话，那么在它的平方根数以内就应该有，否则就没有因子。例如66的平方根在8与9之间，因为66不是素数，，则它一定有比8还小的因子，我们知道66的因子是2、3、6等<br><strong>那我们就可以这样写了</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="built_in">sqrt</span>(m); ++i)&#123;</span><br><span class="line">    <span class="keyword">if</span> (m%i == <span class="number">0</span>) &#123;</span><br><span class="line">        cout &lt;&lt; m &lt;&lt; <span class="string">&quot; isn&#x27;t a prime\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>本次初级素数判断就先到这里</strong><br><strong>有没有感觉到循环挺浪费时间的呢</strong><br><strong>那去想想有什么方法能够进一步降低时间复杂度</strong></p>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>位运算小结</title>
     <url>/2019/12/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%B0%8F%E7%BB%93/</url>
     <content><![CDATA[<p>位运算主要包括按位与(&amp;)、按位或(|)、按位异或(^)、取反(~)、左移(&lt;&lt;)、右移(&gt;&gt;)这几种，其中除了取反(~)以外，其他的都是二目运算符，即要求运算符左右两侧均有一个运算量</p>
@@ -237,26 +257,6 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
       </categories>
       <tags>
         <tag>位运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初级素数判断</title>
-    <url>/2019/11/10/%E5%88%9D%E7%BA%A7%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD/</url>
-    <content><![CDATA[<p>这篇只是让大家初步了解如何判断素数，是最基础的内容，之后会讲一些欧拉，埃氏等素数筛的方法</p>
-<span id="more"></span>
-
-<h6 id="第一次的想法"><a href="#第一次的想法" class="headerlink" title="第一次的想法:"></a>第一次的想法:</h6><p>==让它爆搜一遍不就好了== <del>爆搜大法好爆搜大法好</del></p>
-<blockquote>
-<p>具体实现就是让数n从2开始模,一直模到n-1,如果都不能被整除,那就是素数<strong>紧扣定义</strong></p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//判断是否是素数1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;please inpout a number.&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; m; ++i)</span><br><span class="line">        <span class="keyword">if</span> (m%i == <span class="number">0</span>) &#123;</span><br><span class="line">            cout &lt;&lt; m &lt;&lt; <span class="string">&quot; isn&#x27;t a prime\n&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    cout &lt;&lt; m &lt;&lt; <span class="string">&quot; is a prime\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这么复杂,那来进行下简单优化:<br>如果一个数有因子的话，那么在它的平方根数以内就应该有，否则就没有因子。例如66的平方根在8与9之间，因为66不是素数，，则它一定有比8还小的因子，我们知道66的因子是2、3、6等<br><strong>那我们就可以这样写了</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="built_in">sqrt</span>(m); ++i)&#123;</span><br><span class="line">    <span class="keyword">if</span> (m%i == <span class="number">0</span>) &#123;</span><br><span class="line">        cout &lt;&lt; m &lt;&lt; <span class="string">&quot; isn&#x27;t a prime\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>本次初级素数判断就先到这里</strong><br><strong>有没有感觉到循环挺浪费时间的呢</strong><br><strong>那去想想有什么方法能够进一步降低时间复杂度</strong></p>
-]]></content>
-      <tags>
-        <tag>c++</tag>
-        <tag>素数</tag>
       </tags>
   </entry>
   <entry>
@@ -357,6 +357,41 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
       </tags>
   </entry>
   <entry>
+    <title>排序之选择排序</title>
+    <url>/2019/11/13/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9/</url>
+    <content><![CDATA[<ul>
+<li>简单选择排序是交换排序类型的一种，其排序思想为：每趟从待排序的记录中选出关键字最小的记录，顺序放在已排序的记录序列末尾，直到全部排序结束为止。</li>
+<li>简单选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
+<li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</li>
+<li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
+<li>重复第二步，直到所有元素均排序完毕。</li>
+</ol>
+<h3 id="动图演示"><a href="#动图演示" class="headerlink" title="动图演示"></a>动图演示</h3><p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" class="lazyload" data-srcset="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="简单选择排序"></p>
+<h3 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h3><p><img src="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png" class="lazyload" data-srcset="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="简单选择排序"></p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><hr>
+<p><img src="https://images.cnblogs.com/cnblogs_com/TongWY/1887991/o_201124155411%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-24%20235355.png" class="lazyload" data-srcset="https://images.cnblogs.com/cnblogs_com/TongWY/1887991/o_201124155411%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-24%20235355.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt=""></p>
+<hr>
+<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><ul>
+<li>简单选择排序的比较次数与序列的初始排序无关。 假设待排序的序列有 N 个元素，则比较次数总是<strong>N (N - 1)/2</strong>。</li>
+<li>而移动次数与序列的初始排序有关。当序列正序时，移动次数最少，为 0.</li>
+<li>当序列反序时，移动次数最多，为3N(N-1)/2。</li>
+<li>所以，综合以上，简单排序的时间复杂度为 <strong>O(N2)</strong>。 </li>
+</ul>
+<hr>
+<h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5><ul>
+<li>简单选择排序需要占用 <strong>1</strong> 个临时空间，在交换数值时使用。</li>
+</ul>
+<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择排序函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selection_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; len - <span class="number">1</span> ; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; len; j++)     <span class="comment">//查找未排序的元素</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[min])    <span class="comment">//寻找最小值</span></span><br><span class="line">                min = j;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[min];</span><br><span class="line">        arr[min]= arr[i];</span><br><span class="line">        arr[i] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>c++</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序入坑之冒泡</title>
     <url>/2019/11/11/%E6%8E%92%E5%BA%8F%E5%85%A5%E5%9D%91%E4%B9%8B%E5%86%92%E6%B3%A1/</url>
     <content><![CDATA[<h3 id="算法入坑第一步，冒泡排序。"><a href="#算法入坑第一步，冒泡排序。" class="headerlink" title="算法入坑第一步，冒泡排序。"></a>算法入坑第一步，冒泡排序。</h3><p>搜索算法是我们学习过程中必不可少的一步，其实理解以后，它也没有那么难…来先看个冒泡吧</p>
@@ -410,41 +445,6 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 <p>　　　　2.如果很不幸我们的数据是反序的，则需要进行n-1趟排序。每趟排序要进行n-i次比较(1≤i≤n-1)，且每次比较都必须移动记录三次来达到交换记录位置。在这种情况下，比较和移动次数均达到最大值：</p>
 <p>　　　　　　综上所述：冒泡排序总的平均时间复杂度为：O(n2) ,时间复杂度和数据状况无关。</p>
 ]]></content>
-      <tags>
-        <tag>c++</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序之选择排序</title>
-    <url>/2019/11/13/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9/</url>
-    <content><![CDATA[<ul>
-<li>简单选择排序是交换排序类型的一种，其排序思想为：每趟从待排序的记录中选出关键字最小的记录，顺序放在已排序的记录序列末尾，直到全部排序结束为止。</li>
-<li>简单选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
-<li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</li>
-<li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
-<li>重复第二步，直到所有元素均排序完毕。</li>
-</ol>
-<h3 id="动图演示"><a href="#动图演示" class="headerlink" title="动图演示"></a>动图演示</h3><p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" class="lazyload" data-srcset="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="简单选择排序"></p>
-<h3 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h3><p><img src="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png" class="lazyload" data-srcset="https://images2015.cnblogs.com/blog/318837/201604/318837-20160422104021288-937621481.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="简单选择排序"></p>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><hr>
-<p><img src="https://images.cnblogs.com/cnblogs_com/TongWY/1887991/o_201124155411%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-24%20235355.png" class="lazyload" data-srcset="https://images.cnblogs.com/cnblogs_com/TongWY/1887991/o_201124155411%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-11-24%20235355.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt=""></p>
-<hr>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><ul>
-<li>简单选择排序的比较次数与序列的初始排序无关。 假设待排序的序列有 N 个元素，则比较次数总是<strong>N (N - 1)/2</strong>。</li>
-<li>而移动次数与序列的初始排序有关。当序列正序时，移动次数最少，为 0.</li>
-<li>当序列反序时，移动次数最多，为3N(N-1)/2。</li>
-<li>所以，综合以上，简单排序的时间复杂度为 <strong>O(N2)</strong>。 </li>
-</ul>
-<hr>
-<h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5><ul>
-<li>简单选择排序需要占用 <strong>1</strong> 个临时空间，在交换数值时使用。</li>
-</ul>
-<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择排序函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selection_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; len - <span class="number">1</span> ; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; len; j++)     <span class="comment">//查找未排序的元素</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[min])    <span class="comment">//寻找最小值</span></span><br><span class="line">                min = j;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[min];</span><br><span class="line">        arr[min]= arr[i];</span><br><span class="line">        arr[i] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>c++</tag>
         <tag>排序</tag>
