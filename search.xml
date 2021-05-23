@@ -56,6 +56,9 @@ classpath配置问题：如果使用JDK1.5以上就不需要配置这个环境�
 
 <p> _ **** 嘿嘿，慢慢玩 _</p>
 ]]></content>
+      <categories>
+        <category>趣味</category>
+      </categories>
       <tags>
         <tag>随笔</tag>
         <tag>c++</tag>
@@ -121,6 +124,10 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 <span id="more"></span>
 
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123; <span class="comment">//你见，或者不见我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      <span class="attr">me</span>: &#123;        <span class="comment">//我就在那里</span></span><br><span class="line">         <span class="attr">sad</span>: <span class="literal">null</span>, <span class="comment">//不悲 不喜</span></span><br><span class="line">         <span class="attr">happy</span>: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(meetMe || !meetMe) &#123;    <span class="comment">//你念，或者不念我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;</span><br><span class="line">      <span class="attr">feeling</span>: &#123;    <span class="comment">//情就在那里</span></span><br><span class="line">         <span class="attr">left</span>: <span class="number">0</span>,   <span class="comment">//不来 不去</span></span><br><span class="line">         <span class="attr">right</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(loveMe || !loveMe) &#123;    <span class="comment">//你爱，或者不爱我</span></span><br><span class="line">   <span class="keyword">await</span> there(&#123;     <span class="comment">//爱就在那里</span></span><br><span class="line">      <span class="attr">love</span>: <span class="literal">Infinity</span> <span class="comment">//不增不减</span></span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(withMe || !withMe) &#123;    <span class="comment">//你跟，或者不跟我</span></span><br><span class="line">   <span class="keyword">const</span> tomorrow = &#123; <span class="comment">//我的手就在你手里</span></span><br><span class="line">      <span class="attr">we</span>: myHands &amp;&amp; yourHands</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">Object</span>.freeze(tomorrow)    <span class="comment">//不舍不弃</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!myArms.has(you)) &#123;    <span class="comment">//来我的怀里</span></span><br><span class="line">   OR             <span class="comment">//或者</span></span><br><span class="line">   yourHeart.push(me) <span class="comment">//让我住进你的心里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>生活</category>
+        <category>爱</category>
+      </categories>
       <tags>
         <tag>生活</tag>
         <tag>爱</tag>
@@ -143,6 +150,7 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
 ]]></content>
       <categories>
         <category>生活</category>
+        <category>爱</category>
       </categories>
       <tags>
         <tag>生活</tag>
@@ -163,8 +171,11 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
