@@ -25,7 +25,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021/4 - KAKU日常</title>
+  <title>Tag: 生活,爱 - KAKU日常</title>
   
 
   
@@ -105,7 +105,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -378,7 +378,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://api.dujin.org/bing/1920.php"></div>
           
@@ -449,152 +449,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
       
         
           
         
-          
-        
-          
-        
-          
-            <div class='post-wrapper'>
-              <div class="post post-v3 white-box reveal shadow">
-  
-  
-    <div class='pin'>
-      <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg'/>
-    </div>
-  
-  
-  
-    
-    <h2 class="article-title" pin>
-      <a href="/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/">
-        博客重建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>博客声明</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/09/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-            </div>
-          
-        
       
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/13/love/">
-        love
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>My love for you exists in every bit of life,like this code</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%88%B1/">爱</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/13/love/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/">
-        JVM、JRE和JDK
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>计算机高级语言的类型主要有编译型和解释型两种，而Java 语言是两种类型的结合。<br>Java首先利用文本编辑器编写 Java源程序，源文件的后缀名为.java；再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class； 最后利用虚拟机（解释器，java）解释执行。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/11/JVM%E3%80%81JRE%E5%92%8CJDK/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
       
         
           <div class='post-wrapper'>
@@ -642,8 +510,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </div>
         
       
-        
-      
     
   </section>
   
@@ -651,7 +517,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -833,14 +700,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
