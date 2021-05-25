@@ -25,7 +25,11 @@
   
   <title>配置Clion开发STM32[优雅的开发] - KAKU日常</title>
   
+    <meta name="keywords" content="STM32">
+  
 
+  
+    <meta name="description" content="快来试试用Clion替换掉古董的Keil的开发环境，康康优雅の开发">
   
 
   <!-- feed -->
@@ -475,6 +479,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+    </a>
+  </div>
+
 
           
         
@@ -511,7 +522,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  
+  <p>快来试试用Clion替换掉古董的Keil的开发环境，康康优雅の开发</p>
+<span id="more"></span>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>尽管对于STM32的开发而言，Keil已经是一个很好的工具了，作为一个老牌的嵌入式开发用IDE，功能也很完善，升级到5.XX版本之后界面看着也挺现代。但是，作为一个属于上一个时代的开发环境，写代码时会感觉到它的自动补全、智能提示等等功能非常弱，特别是在CubeMX工具大大改善了初始化配置的体验以后，这种不足就显得更加突出了。</p>
+<p>  而Keil的缺点正是CLion的重要优点，CLion由JetBrains公司开发，是一个广受赞誉的IDE，自动补全、智能提示能力一流，活动模板等特性可以大大提升开发效率。</p>
+<p>  当然，早期CLion是不能用于单片机开发的，不过，用户要求添加相关功能的呼声一直很高，也一直有人通过各种魔改来在CLion下进行单片机开发工作。终于，在2019.1版本中，CLion添加了对于CubeMX的支持（2020.1版本则更加完善），然后，辅以几个其他的工具，可以在CLion下完成STM开发中的全部工作。而且，相关配置可以在任意主流桌面平台上搭建。</p>
+<p>  So，赶紧折腾起来，换上属于新时代的开发工具，进行优雅の开发</p>
+<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><h2 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h2><ul>
+<li>CLion ——-主角</li>
+<li>STM32CubeMX ST官方力推的自动化配置和代码生成工具</li>
+<li>OpenOCD ——调试工具</li>
+<li>gcc-arm-none-eabi ——–交叉编译工具链</li>
+<li>MinGW ——–额，你可以认为这是一个大礼包</li>
+<li>可能还包括你所使用的调试器的驱动，之前安装过就行</li>
+</ul>
+<h2 id="MinGW"><a href="#MinGW" class="headerlink" title="MinGW"></a>MinGW</h2><p>首先，从<a target="_blank" rel="noopener" href="http://www.mingw-w64.org/doku.php">这里</a>下载MinGW（其实是MinGW-w64，兼容MinGW且更强大），然后解压到某个目录（以后不要改动）</p>
+<p>然后，添加环境变量，具体到bin目录，比如<code>C:ToolChainming\w64\bin</code>这样，根据自己安装目录确定</p>
+<p>打开命令行，输入<code>gcc -v</code>测试一下，没有提示不是可用的指令而是返回了一大堆信息就说明一切正常</p>
+<blockquote>
+<p>补充：安装过Dev-cpp之类的自带MinGW的软件的话这个安装环节可以省略</p>
+</blockquote>
+<h2 id="OpenOCD"><a href="#OpenOCD" class="headerlink" title="OpenOCD"></a>OpenOCD</h2><p>首先，在<a target="_blank" rel="noopener" href="https://gnutoolchains.com/arm-eabi/openocd/">这里</a>下载并解压到某个目录（之后不要改动）</p>
+<p>然后，添加环境变量，还是具体到bin目录</p>
+<p>最后同样要测试一下，命令行输入<code>openocd -v</code>，回车，返回版本信息说明状态正常</p>
+<h2 id="gcc-arm-none-eabi"><a href="#gcc-arm-none-eabi" class="headerlink" title="gcc-arm-none-eabi"></a>gcc-arm-none-eabi</h2><p>首先，在<a target="_blank" rel="noopener" href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads">这里</a>下载并解压到某个目录（之后不要改动）</p>
+<p>然后，添加环境变量</p>
+<p>开命令行用<code>arm-none-eabi-gcc -v</code>测试一下，返回版本信息说明正常</p>
+<h2 id="STM32CubeMX"><a href="#STM32CubeMX" class="headerlink" title="STM32CubeMX"></a>STM32CubeMX</h2><p>CubeMX是基于Java开发的软件，所以需要先安装Java运行环境（JRE、Java Runtime Environment），根据自己系统和CPU选择版本，如intel+win10 64位应选择“jre-8u251-windows-x64.exe”</p>
+<p>安装JRE以后，命令行下用<code>java -version</code>进行测试，返回版本信息则正常。</p>
+<p>然后，我们来安装STM32CubeMX，从<a target="_blank" rel="noopener" href="https://www.st.com/zh/development-tools/stm32cubemx.html">这里</a>下载即可，安装过程没什么特别的。</p>
+<blockquote>
+<p>补充：JRE必须是64位的，否则CubeMX会不正常</p>
+</blockquote>
+<h1 id="哎，不写了，就是玩，就玩"><a href="#哎，不写了，就是玩，就玩" class="headerlink" title="哎，不写了，就是玩，就玩"></a>哎，不写了，就是玩，就玩</h1>
   
   
     
@@ -545,10 +589,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-24T10:27:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-25T11:17:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 24, 2021</p>
+    <p>更新于：May 25, 2021</p>
   </a>
 </div>
 
@@ -556,6 +600,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>STM32</p></a></div>
+
 
         
       
@@ -567,7 +614,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary=快来试试用Clion替换掉古董的Keil的开发环境，康康优雅の开发"
           
           >
           
@@ -579,7 +626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary=快来试试用Clion替换掉古董的Keil的开发环境，康康优雅の开发"
           
           >
           
@@ -591,7 +638,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://tongwy.top/2021/05/24/%E9%85%8D%E7%BD%AEClion%E5%BC%80%E5%8F%91STM32-%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%80%E5%8F%91/&title=配置Clion开发STM32[优雅的开发] - KAKU日常&summary=快来试试用Clion替换掉古董的Keil的开发环境，康康优雅の开发"
           
           >
           
@@ -659,6 +706,20 @@ if(meetMe || !meetMe) &#123; //你见，或者...</p>
     
 
 
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">必备软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MinGW"><span class="toc-number">2.</span> <span class="toc-text">MinGW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenOCD"><span class="toc-number">3.</span> <span class="toc-text">OpenOCD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc-arm-none-eabi"><span class="toc-number">4.</span> <span class="toc-text">gcc-arm-none-eabi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32CubeMX"><span class="toc-number">5.</span> <span class="toc-text">STM32CubeMX</span></a></li></ol>
+    </div>
+  </section>
 
 
   
