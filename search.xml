@@ -527,4 +527,43 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
         <tag>STM32</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LintCode巴什博弈</title>
+    <url>/2021/05/28/LintCode%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你正在和朋友玩一个游戏：桌子上有一堆石头，每一次你们都会从中拿出1到3个石头。拿走最后一个石头的人赢得游戏。游戏开始时，你是先手。</p>
+<span id="more"></span>
+
+<p>假设两个人都绝对理性，都会做出最优决策。给定石头的数量，判断你是否会赢得比赛。</p>
+<p>举例：有四个石头，那么你永远不会赢得游戏。不管拿几个，最后一个石头一定会被你的朋友拿走</p>
+<h2 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h2><h3 id="样例一："><a href="#样例一：" class="headerlink" title="样例一："></a>样例一：</h3><blockquote>
+<p>输入：n = 4 </p>
+<p>输出：False</p>
+<p>解析：先手取走1,2或者3，对方都会取走最后一个</p>
+</blockquote>
+<h3 id="样例二："><a href="#样例二：" class="headerlink" title="样例二："></a>样例二：</h3><blockquote>
+<p>输入：n = 5 </p>
+<p>输出：True</p>
+<p>解析：先手拿1个，必胜</p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这道题的关键是寻找“必胜态”。</p>
+<p>根据题设条件：</p>
+<p>当n∈[1,3]时，先手必胜</p>
+<p>当n == 4时，无论先手第一轮如何选取，下一轮都会转化为n∈[1,3]的情形，此时先手必负</p>
+<p>当n∈[5,7]时，先手必胜，先手分别通过取走[1,3]颗石头，可将状态转化为n == 4时的情形，此时后手必负</p>
+<p>当n == 8时，无论先手第一轮如何选取，下一轮都会转化为n∈[5,7]的情形，此时先手必负</p>
+<p>……</p>
+<p>以此类推，可以得出结论：</p>
+<p>当n % 4 != 0时，先手必胜；否则先手必负</p>
+<blockquote>
+<p>这就有点动态规划的思想了，无论刚开始是多少，都可以一步一步转化为一个最小问题规模</p>
+</blockquote>
+<p>在你的对手最后一次拿的时候，石头要是4个， 这时无论他拿1、2、3个，你都有石头拿。要保证这一点，你需要保证每次你拿完时石头的个数是4的倍数。那就意味着一开始石头的数目不是4的倍数。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param n: an integer</span></span><br><span class="line"><span class="comment">     * @return: whether you can win the game given the number of stones in the heap</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canWinBash</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Write your code here</span></span><br><span class="line">        <span class="keyword">return</span> n%<span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LintCode</category>
+      </categories>
+      <tags>
+        <tag>LintCode</tag>
+      </tags>
+  </entry>
 </search>
