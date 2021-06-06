@@ -655,4 +655,38 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
         <tag>动态规划</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java上转型与下转型</title>
+    <url>/2021/06/06/Java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E4%B8%8E%E4%B8%8B%E8%BD%AC%E5%9E%8B/</url>
+    <content><![CDATA[<p>Java 语言允许某个类型的引用变量引用子类的实例，而且可以对这个引用变量进行类型转换。Java 中引用类型之间的类型转换（<code>前提是两个类是父子关系</code>）主要有两种，分别是<code>向上转型</code>（<code>upcasting</code>）和<code>向下转型</code>（<code>downcasting</code>）</p>
+<span id="more"></span>
+
+<h2 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h2><p><strong>父类引用指向子类对象为向上转型</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">fatherClass obj = <span class="keyword">new</span> sonClass();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，fatherClass 是父类名称或接口名称，obj 是创建的对象，sonClass 是子类名称</p>
+</blockquote>
+<p>向上转型就是把子类对象直接赋给父类引用，不用强制转换。使用向上转型<code>可以调用父类类型中的所有成员，不能调用子类类型中特有成员</code>，最终运行效果看子类的具体实现</p>
+<h2 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h2><p>与向上转型相反，<strong>子类对象指向父类引用为向下转型</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">sonClass obj = (sonClass)fatherClass;   <span class="comment">//需要强制转换</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，fatherClass 是父类名称，obj 是创建的对象，sonClass 是子类名称</p>
+</blockquote>
+<p>向下转型可以调用子类类型中所有的成员，不过需要注意的是如果父类引用对象指向的是子类对象，那么在向下转型的过程中是安全的，也就是编译是不会出错误。但是如果父类引用对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，但是运行时会出现Java 强制类型转换异常，一般使用 instanceof 运算符来避免出此类错误</p>
+<p>比如cat→animal，那么你就应该由对象animal→cat，假如还有一个animal的子类叫dog，你如果由animal→dog那么就是错误转型，就像我给了你1美金，你给回我的是1RMB那么就不是还原了</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">AllAnimal a=<span class="keyword">new</span> Fish();</span><br><span class="line">a.speak();	 </span><br><span class="line"><span class="comment">//强制向下转型</span></span><br><span class="line">Fish a1=(Fish)a;</span><br><span class="line">a1.canDo();</span><br></pre></td></tr></table></figure>
+
+<p><strong>所以，向下转型可以实现父类引用可以使用子类的新增方法</strong></p>
+<hr>
+<blockquote>
+<p>注：<strong>无论向上向下转型，编译看左边，运行看右边</strong><br>意思就是：编译时候左边的对象有没有该方法（不严谨），运行时候看new的对象是谁，就调用谁的方法</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
 </search>
