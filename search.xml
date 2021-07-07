@@ -689,4 +689,349 @@ nums.clear();                //清空</code></pre><p><strong>其它</strong></p>
         <tag>Java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Math类与Random类常用方法</title>
+    <url>/2020/02/29/Math%E7%B1%BB%E4%B8%8ERandom%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p><em>Java提供的常用类中，Math类为常用的数学计算方法，Random类为常用的随机生成方法</em></p>
+<span id="more"></span>
+
+<h2 id="Math类方法"><a href="#Math类方法" class="headerlink" title="Math类方法"></a>Math类方法</h2><p>abs 绝对值</p>
+<p>acos,asin,atan,cos,sin,tan 三角函数</p>
+<p>sqrt 平方根</p>
+<p>pow(double a, double b) a的b次幂</p>
+<p>max(double a, double b) 取大值</p>
+<p>min(double a, double b) 取小值</p>
+<p>ceil(double a) 大于a的最小整数</p>
+<p>floor(double a) 小于a的最大整数</p>
+<p>random() 返回 0.0 到 1.0 的随机数</p>
+<p>long round(double a) double型的数据a转换为long型(四舍五入)</p>
+<p>toDegrees(double angrad) 弧度-&gt;角度</p>
+<p>toRadians(double angdeg) 角度-&gt;弧度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMath</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//取整相关操作</span></span><br><span class="line">        System.out.println(Math.ceil(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.floor(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.2</span>));</span><br><span class="line">        System.out.println(Math.round(<span class="number">3.8</span>));</span><br><span class="line">        <span class="comment">//绝对值、开方、a的b次幂等操作</span></span><br><span class="line">        System.out.println(Math.abs(-<span class="number">45</span>));</span><br><span class="line">        System.out.println(Math.sqrt(<span class="number">64</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line">        System.out.println(Math.pow(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">        <span class="comment">//Math类中常用的常量</span></span><br><span class="line">        System.out.println(Math.PI);</span><br><span class="line">        System.out.println(Math.E);</span><br><span class="line">        <span class="comment">//随机数</span></span><br><span class="line">        System.out.println(Math.random());<span class="comment">// [0,1)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Random方法"><a href="#Random方法" class="headerlink" title="Random方法"></a>Random方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandom</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="comment">//随机生成[0,1)之间的double类型的数据</span></span><br><span class="line">        System.out.println(rand.nextDouble());</span><br><span class="line">        <span class="comment">//随机生成int类型允许范围之内的整型数据</span></span><br><span class="line">        System.out.println(rand.nextInt());</span><br><span class="line">        <span class="comment">//随机生成[0,1)之间的float类型的数据</span></span><br><span class="line">        System.out.println(rand.nextFloat());</span><br><span class="line">        <span class="comment">//随机生成false或者true</span></span><br><span class="line">        System.out.println(rand.nextBoolean());</span><br><span class="line">        <span class="comment">//随机生成[0,10)之间的int类型的数据</span></span><br><span class="line">        System.out.print(rand.nextInt(<span class="number">10</span>));</span><br><span class="line">        <span class="comment">//随机生成[20,30)之间的int类型的数据</span></span><br><span class="line">        System.out.print(<span class="number">20</span> + rand.nextInt(<span class="number">10</span>));</span><br><span class="line">        <span class="comment">//随机生成[20,30)之间的int类型的数据（此种方法计算较为复杂）</span></span><br><span class="line">        System.out.print(<span class="number">20</span> + (<span class="keyword">int</span>) (rand.nextDouble() * <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++之文件操作</title>
+    <url>/2019/12/26/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>C语言中对于文件的操作是通过指针来完成的，要注意，文件指针不是指向一段内存空间的，它实际上指向的是描述这个文件相关信息的一个文件结构体</p>
+<span id="more"></span>
+<h3 id="声明文件变量"><a href="#声明文件变量" class="headerlink" title="声明文件变量"></a>声明文件变量</h3><pre><code>FILE *file;</code></pre><p>声明了一个名为file的文件指针<br>定义好一个文件指针变量后就需要初始化这个文件指针变量或者说是打开文件</p>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>打开文件通过fopen函数完成，比如：</p>
+<pre><code>file = fopen(&quot;1.text&quot;,&quot;r+&quot;);</code></pre><p>fopen函数中有两个传入参数，第一个参数是文件的名称，比如“1.txt”，要注意，如果这个文件没有和你的程序处于同一目录下，需要写入全部路径，例如   “c:\1\1.txt”；第二个参数为打开文件的方式，他可以从下面几个方式中打开 </p>
+<p>正常返回：<code>被打开文件的文件指针</code><br>异常返回：<code>NULL</code></p>
+<center> 文件的打开方式 </center>
+
+<table>
+<thead>
+<tr>
+<th>打开方式</th>
+<th>含义</th>
+<th>指定文件不存在时</th>
+<th>指定文件存在时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写方式打开文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加方式打开文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读/写方式打开文本文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读/写方式创建新的文本文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读/追加方式建立新的文本文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>只读方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>只写方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>追加方式打开二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾添加</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>读/写方式打开二进制文件</td>
+<td>出错</td>
+<td>正常打开</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>读/写方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>文件原有内容丢失</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>读/追加方式创建新的二进制文件</td>
+<td>建立新文件</td>
+<td>在原有内容末尾追加</td>
+</tr>
+</tbody></table>
+<h3 id="文件关闭"><a href="#文件关闭" class="headerlink" title="文件关闭"></a>文件关闭</h3><pre><code>fclose(FILE *fp);</code></pre><p>关闭已经打开的一个名为fp的FILE文件指针</p>
+<p>正常返回：<code>0</code><br>异常返回：<code>EOF</code></p>
+<h3 id="文件的顺序读写函数"><a href="#文件的顺序读写函数" class="headerlink" title="文件的顺序读写函数"></a>文件的顺序读写函数</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>函数名</th>
+<th>适用于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符输入函数</td>
+<td>fgetc</td>
+<td>所有输入流</td>
+</tr>
+<tr>
+<td>字符输出函数</td>
+<td>fputc</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>文本行输出函数</td>
+<td>fputs</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>格式化输入函数</td>
+<td>fscanf</td>
+<td>所有输入流</td>
+</tr>
+<tr>
+<td>格式化输出函数</td>
+<td>fprintf</td>
+<td>所有输出流</td>
+</tr>
+<tr>
+<td>二进制输入</td>
+<td>fread</td>
+<td>文件</td>
+</tr>
+<tr>
+<td>二进制输出</td>
+<td>fwrite</td>
+<td>文件</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/2019/12/20/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<p><code>十个二分九个错</code>,二分虽然它的思想比较容易理解，但写出一个没有bug的二分，着实有些难受</p>
+<span id="more"></span>
+<h3 id="什么是二分"><a href="#什么是二分" class="headerlink" title="什么是二分"></a>什么是二分</h3><p>二分查找针对的是一个有序的数据集合，每次通过跟区间中间的元素对比，将待查找的区间缩小为之前的一半，直到找到要查找的元素，或者区间缩小为0</p>
+<h4 id="二分查找的思路如下"><a href="#二分查找的思路如下" class="headerlink" title="二分查找的思路如下"></a>二分查找的思路如下</h4><p>（1）首先，从数组的中间元素开始搜索，如果该元素正好是目标元素，则搜索过程结束，否则执行下一步。</p>
+<p>（2）如果目标元素大于/小于中间元素，则在数组大于/小于中间元素的那一半区域查找，然后重复步骤上述操作的操作。</p>
+<p>（3）如果某一步数组为空，则表示找不到目标元素。</p>
+<p>二分法查找的时间复杂度O(logn),且不需要额外的空间</p>
+<h4 id="二分图解"><a href="#二分图解" class="headerlink" title="二分图解"></a>二分图解</h4><p><img src="http://www.cppblog.com/images/cppblog_com/guogangj/ds_binarysearch.png" class="lazyload" data-srcset="http://www.cppblog.com/images/cppblog_com/guogangj/ds_binarysearch.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="Image 二分查找"></p>
+<h3 id="传统二分"><a href="#传统二分" class="headerlink" title="传统二分"></a>传统二分</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (nums[len - <span class="number">1</span>] &lt; target) &#123;</span><br><span class="line">            <span class="keyword">return</span> len;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">// 等于的情况最简单，我们应该放在第 1 个分支进行判断</span></span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                <span class="comment">// 题目要我们返回大于或者等于目标值的第 1 个数的索引</span></span><br><span class="line">                <span class="comment">// 此时 mid 一定不是所求的左边界，</span></span><br><span class="line">                <span class="comment">// 此时左边界更新为 mid + 1</span></span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 既然不会等于，此时 nums[mid] &gt; target</span></span><br><span class="line">                <span class="comment">// mid 也一定不是所求的右边界</span></span><br><span class="line">                <span class="comment">// 此时右边界更新为 mid - 1</span></span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 注意：一定得返回左边界 left，</span></span><br><span class="line">        <span class="comment">// 理由是对于 [1,3,5,6]，target = 2，返回大于等于 target 的第 1 个数的索引，此时应该返回 1</span></span><br><span class="line">        <span class="comment">// 在上面的 while (left &lt;= right) 退出循环以后，right &lt; left，right = 0 ，left = 1</span></span><br><span class="line">        <span class="comment">// 根据题意应该返回 left，</span></span><br><span class="line">        <span class="comment">// 如果题目要求你返回小于等于 target 的所有数里最大的那个索引值，应该返回 right</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p><strong>取中位数索引的代码有问题</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = (left + right) / <span class="number">2</span> ;</span><br></pre></td></tr></table></figure>
+<p>这也不能说不对，但是如果当<code>left</code>和<code>right</code>都非常大的时候，那么<code>left+right</code>就很有可能会超过int类型能表示的最大范围，及整型溢出，这样就会缩小数据的处理范围，可以写成这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span> ;</span><br></pre></td></tr></table></figure>
+<p>事实上，<code>int mid = left + (right - left) / 2</code>在<code>right</code>很大、<code>left</code>是负数且很小的时候，<code>right - left</code>也有可能超过int类型能表示的最范围，只不过一般情况下<code>left</code>和<code>right</code>表示的是数组索引值<code>left</code>是非负数，因此<code>right - left</code>溢出的可能性很小<br>所以使用“左边界索引 + 右边界索引”，然后“无符号右移 1 位”是推荐的写法，计算机的处理速度也会更快</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span> ;</span><br></pre></td></tr></table></figure>
+
+<p><strong>返回条件的问题</strong></p>
+<p>循环可以进行的条件写成<code>while (left &lt;= right)</code>时，在退出循环的时候，需要考虑返回<code>left</code>还是<code>right</code>，稍不注意，就容易出错<br>或许，我们可以回避这个问题^_^</p>
+<h3 id="改良二分"><a href="#改良二分" class="headerlink" title="改良二分"></a>改良二分</h3><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>首先我们把循环条件改为<code>while(left &lt; right)</code>,那么在退出循环的时候，一定有<code>left=right</code>成立，所以我们返回<code>left</code>或<code>right</code>都可以了<br>或许你可能会有一个疑问，退出循环的时候还有一个值没有判断啊(退出循环时left或right的索引值)<br>木有关系滴，那就退出循环来看，经过分析，甚至都不用看就能确定他是目标值<br>更深层次的思想是“夹逼法”或者可以说是“排除法”</p>
+<p>其实，二分排除的过程中就是将区间不断“夹逼”的过程，在这过程中，不断排除一半的区间，从而加快查找速度</p>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><p>中位数先写 int mid = (left + right) &gt;&gt;&gt; 1 ; 根据循环里分支的编写情况，再做调整<br>理解这一点，首先要知道：当数组的元素个数是偶数的时候，中位数有左中位数和右中位数之分。</p>
+<p>当数组的元素个数是偶数的时候：<br>使用 int mid = left + (right - left) / 2 ; 得到左中位数的索引；</p>
+<p>使用 int mid = left + (right - left + 1) / 2 ; 得到右中位数的索引。</p>
+<p>当数组的元素个数是奇数的时候，以上二者都能选到最中间的那个中位数。<br>其次，</p>
+<p>int mid = left + (right - left) / 2 ; 等价于 int mid = (left + right) &gt;&gt;&gt; 1；</p>
+<p>int mid = left + (right - left + 1) / 2 ; 等价于 int mid = (left + right + 1) &gt;&gt;&gt; 1 。</p>
+<p>记忆方法：</p>
+<p>(right - left) 不加 1 选左中位数，加 1 选右中位数。</p>
+<p>那么，什么时候使用左中位数，什么时候使用右中位数呢？选中位数的依据是为了避免死循环，得根据分支的逻辑来选择中位数，而分支逻辑的编写也有技巧，下面具体说。</p>
+<p>先写逻辑上容易想到的分支逻辑，这个分支逻辑通常是排除中位数的逻辑；</p>
+<pre><code>如果分支的逻辑，在选择左边界的时候，不能排除中位数，那么中位数就选“右中位数”，只有这样区间才会收缩，否则进入死循环；
+同理，如果分支的逻辑，在选择右边界的时候，不能排除中位数，那么中位数就选“左中位数”，只有这样区间才会收缩，否则进入死循环。</code></pre><p>举个栗子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//伪代码</span></span><br><span class="line"><span class="keyword">while</span> left &lt; right:</span><br><span class="line">      <span class="comment">//先写左中位数，看看你的分支会不会让你代码出现死循环，从而调整</span></span><br><span class="line">    mid = left + (right - left) <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">if</span> (check(mid)):</span><br><span class="line">        <span class="comment">//选择右边界的时候，可以排除中位数</span></span><br><span class="line">        right = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment">//选择左边界的时候，不能排除中位数</span></span><br><span class="line">        left = mid</span><br></pre></td></tr></table></figure>
+<p>在区间中的元素只剩下2个时候，例如：left = 3，right = 4。<br>此时左中位数就是左边界，如果你的逻辑执行到 left = mid 这个分支，且你选择的中位数是左中位数，此时左边界就不会得到更新，区间就不会再收缩（理解这句话是关键），从而进入死循环；<br>为了避免出现死循环，你需要选择中位数是右中位数，当逻辑执行到 left = mid 这个分支的时候，因为你选择了右中位数，让逻辑可以转而执行到 right = mid - 1 让区间收缩，最终成为1个数，退出while循环。</p>
+<p><em>如果出现了死循环，那么就打印输出左右边界、中位数的值和目标值、分支逻辑等必要的信息，进而进行分析</em></p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>查找</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内部类</title>
+    <url>/2020/02/24/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="内部类的概念"><a href="#内部类的概念" class="headerlink" title="内部类的概念"></a>内部类的概念</h2><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为内部类(innerclasses)。</p>
+<span id="more"></span>
+<p>内部类可以使用public、default、protected 、private以及static修饰。而外部顶级类(我们以前接触的类)只能使用public和default修饰。</p>
+<p><strong>注意</strong></p>
+<p>内部类只是一个编译时概念，一旦我们编译成功，就会成为完全不同的两个类。编译完成后会出现两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名可以和外部类的相同</p>
+<h4 id="内部类的作用"><a href="#内部类的作用" class="headerlink" title="内部类的作用"></a>内部类的作用</h4><ol>
+<li><p>内部类提供了更好的封装，只能让外部类直接访问，不允许同一个包中的其它类直接访问。</p>
+</li>
+<li><p>内部类可以直接访问外部类的私有属性，内部类被当成其外部类的成员。但外部类不能访问内部类的内部属性。</p>
+</li>
+<li><p>接口只是解决了多重继承的部分问题，而内部类使得多重继承的解决方案变得更加完善。</p>
+</li>
+</ol>
+<h4 id="内部类的使用场景"><a href="#内部类的使用场景" class="headerlink" title="内部类的使用场景"></a>内部类的使用场景</h4><ol>
+<li>由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，在只为外部类提供服务的情况下可以优先考虑内部类</li>
+<li>内部类的使用可以间接的实现多继承，每个内部类都能独立的继承一个类或者实现某些接口，所以无论外部类是否已经继承了某个类或者实现了某些接口，对于内部类没有任何影响</li>
+</ol>
+<h2 id="内部类的分类"><a href="#内部类的分类" class="headerlink" title="内部类的分类"></a>内部类的分类</h2><p>在Java中内部类主要分为成员内部类(非静态内部类、静态内部类)、匿名内部类、局部内部类。<br>.成员内部类(可以使用private、default、protected、public任意进行修饰。 类文件：外部类$内部类.class)</p>
+<h4 id="非静态内部类-外部类里使用非静态内部类和平时使用其他类没什么不同"><a href="#非静态内部类-外部类里使用非静态内部类和平时使用其他类没什么不同" class="headerlink" title="非静态内部类(外部类里使用非静态内部类和平时使用其他类没什么不同)"></a>非静态内部类(外部类里使用非静态内部类和平时使用其他类没什么不同)</h4><p> i. 非静态内部类必须寄存在一个外部类对象里。因此，如果有一个非静态内部类对象那么一定存在对应的外部类对象。非静态内部类对象单独属于外部类的某个对象。</p>
+<p>ii. 非静态内部类可以直接访问外部类的成员，但是外部类不能直接访问非静态内部类成员。</p>
+<p>iii. 非静态内部类不能有静态方法、静态属性和静态初始化块。</p>
+<p>iv. 外部类的静态方法、静态代码块不能访问非静态内部类，包括不能使用非静态内部类定义变量、创建实例。</p>
+<p>v. 成员变量访问特点：</p>
+<ol>
+<li><p>内部类里方法的局部变量：变量名。</p>
+</li>
+<li><p>内部类属性：this.变量名。</p>
+</li>
+<li><p>外部类属性：外部类名.this.变量名。</p>
+</li>
+</ol>
+<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> age = <span class="number">30</span>;</span><br><span class="line">            System.out.println(<span class="string">&quot;内部类方法里的局部变量age:&quot;</span> + age);<span class="comment">// 30</span></span><br><span class="line">            System.out.println(<span class="string">&quot;内部类的成员变量age:&quot;</span> + <span class="keyword">this</span>.age);<span class="comment">// 20</span></span><br><span class="line">            System.out.println(<span class="string">&quot;外部类的成员变量age:&quot;</span> + Outer.<span class="keyword">this</span>.age);<span class="comment">// 10</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>内部类访问</strong></p>
+<ul>
+<li>外部类中访问内部类：<code>new Inner()</code></li>
+<li>外部类以外的地方访问非静态内部类： <code>Outer.Inner varname = new Outer().new Inner()。</code></li>
+</ul>
+<h4 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h4><h5 id="使用要点"><a href="#使用要点" class="headerlink" title="使用要点"></a>使用要点</h5><ol>
+<li><p>当一个静态内部类对象存在，并不一定存在对应的外部类对象。 因此，静态内部类的实例方法不能直接访问外部类的实例方法。</p>
+</li>
+<li><p>静态内部类看做外部类的一个静态成员。 因此，外部类的方法中可以通过：“静态内部类.名字”的方式访问静态内部类的静态成员，通过 new 静态内部类()访问静态内部类的实例。</p>
+</li>
+</ol>
+<h5 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">    <span class="comment">//相当于外部类的一个静态成员</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStaticInnerClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//通过 new 外部类名.内部类名() 来创建内部类对象</span></span><br><span class="line">        Outer.Inner inner =<span class="keyword">new</span> Outer.Inner();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h4><p>适合那种只需要使用一次的类。比如：键盘监听操作等</p>
+<h5 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span>  父类构造器(实参类表) \实现接口 () &#123;</span><br><span class="line">           <span class="comment">//匿名内部类类体！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul>
+<li>匿名内部类没有访问修饰符</li>
+<li>匿名内部类没有构造方法</li>
+</ul>
+<h5 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.addWindowListener(<span class="keyword">new</span> WindowAdapter()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line"><span class="keyword">this</span>.addKeyListener(<span class="keyword">new</span> KeyAdapter()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">keyPressed</span><span class="params">(KeyEvent e)</span> </span>&#123;</span><br><span class="line">            myTank.keyPressed(e);</span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">keyReleased</span><span class="params">(KeyEvent e)</span> </span>&#123;</span><br><span class="line">            myTank.keyReleased(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h4><p>还有一种内部类，它是定义在方法内部的，作用域只限于本方法，称为局部内部类。</p>
+<p>局部内部类的的使用主要是用来解决比较复杂的问题，想创建一个类来辅助我们的解决方案，到那时又不希望这个类是公共可用的，所以就产生了局部内部类。局部内部类和成员内部类一样被编译，只是它的作用域发生了改变，它只能在该方法中被使用，出了该方法就会失效。</p>
+<p>局部内部类在实际开发中应用很少</p>
+<h5 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//作用域仅限于该方法</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;helloworld&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">new</span> Inner().fun();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Test2().show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性表之单向链表</title>
+    <url>/2019/12/05/%E7%BA%BF%E6%80%A7%E8%A1%A8%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>链表是物理存储结构上非连续，非顺序的存储结构，但是在逻辑上它是通过链表指针指向而实现的顺序结构</p>
+<span id="more"></span>
+<p><strong>链表与数组的区别</strong></p>
+<p>· 数组是静态分布内存，链表是动态分布内存<br>· 数组在内存中是连续的，链表是不连续的<br>· 数组利用下表定位，查找的时间复杂度是O(1),链表通过遍历定位元素，查找的复杂度是O(n)<br>· 数组的插入和移除都需要移动其它元素，时间复杂度是O(n)，；链表的插入或删除不需要移动其它元素，时间复杂度是O(1)</p>
+<p><strong>数组的优点</strong></p>
+<p>· 随机访问性比较强<br>· 查找速度快</p>
+<p><strong>数组的缺点</strong></p>
+<p>· 插入和删除的效率低，需要移动其它元素<br>· 会造成内存的浪费，因为内存是连续的，所以在申请数组的时候就必须规定内存的大小，如果长度不合适就会照成内存的浪费<br>· 内存空间的要求高，创建一个数组，必须要有足够的连续内存空间<br>· 数组的大小是固定的，在创建数组的时候就已经规定好，不能够动态拓展</p>
+<p><strong>链表的优点</strong></p>
+<p>· 插入和删除的效率高，只需要改变指针的指向就可以进行插入和删除<br>· 内存利用效率高，不会浪费内存，可以使用内存中细小的不连续空间，只有在有需要的时候才去创建空间，大小不固定，拓展很灵活</p>
+<p><strong>链表的缺点</strong></p>
+<p>· 查找效率低，因为链表是从第一个节点向后遍历查找</p>
+<p><strong>图表演示</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20181108094742801.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lobF9qeHk=,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20181108094742801.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lobF9qeHk=,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="alt 单向链表"></p>
+<p><strong>结构体构建单向链表</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//结构体定义链表节点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;       <span class="comment">//数据域</span></span><br><span class="line">    ListNode *next; <span class="comment">//后继指针</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>尾插法构建单向链表</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//尾插法构建单向链表</span></span><br><span class="line"><span class="function">struct Listnode* <span class="title">Creat_Listnode</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span> *<span class="title">head</span>,*<span class="title">p</span>,*<span class="title">q</span>;</span></span><br><span class="line">    head = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x) &amp;&amp; x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        p = (struct Listnode *)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(struct Listnode));</span><br><span class="line">        p-&gt;data = x;</span><br><span class="line">        p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>)</span><br><span class="line">            head = p;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            q-&gt;next = p;</span><br><span class="line">        q = p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取链表长度</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取链表长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Length_Listnode</span><span class="params">(struct Listnode *head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span> *<span class="title">t</span>;</span></span><br><span class="line">    t = head;</span><br><span class="line">    <span class="keyword">while</span>(t != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        len++;</span><br><span class="line">        t = t-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>链表排序</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//链表排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort_Listnode</span><span class="params">(struct Listnode *head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">Length_Listnode</span>(head);</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span> *<span class="title">p</span> =</span> head;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;len<span class="number">-1</span>; i++)&#123;         <span class="comment">//冒泡排序的思想</span></span><br><span class="line">        p = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len-i<span class="number">-1</span>; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;data &gt; p-&gt;next-&gt;data)&#123;</span><br><span class="line">                tmp = p-&gt;data;</span><br><span class="line">                p-&gt;data = p-&gt;next-&gt;data;</span><br><span class="line">                p-&gt;next-&gt;data = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>链表插入节点</strong></p>
+<p>·主要头节点与尾节点</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//顺序插入节点</span></span><br><span class="line"><span class="function">struct Listnode* <span class="title">Insert_Listnode</span><span class="params">(struct Listnode *head, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span> *<span class="title">t</span>,*<span class="title">p</span>;</span></span><br><span class="line">    t = head;</span><br><span class="line">    p = (struct Listnode*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(struct Listnode));</span><br><span class="line">    <span class="keyword">if</span>(x &lt; head-&gt;data)&#123;         <span class="comment">//插入头节点</span></span><br><span class="line">        p-&gt;data = head-&gt;data;</span><br><span class="line">        p-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;data = x;</span><br><span class="line">        head-&gt;next = p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;                   <span class="comment">//非头节点插入</span></span><br><span class="line">        <span class="keyword">while</span>(t!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(t-&gt;next==<span class="literal">NULL</span> || t-&gt;next-&gt;data &gt;x)&#123;</span><br><span class="line">                p-&gt;data=x;</span><br><span class="line">                p-&gt;next=t-&gt;next;        <span class="comment">//新增指针的后继指针指向当前后继指针指向的结点</span></span><br><span class="line">                t-&gt;next=p;              <span class="comment">//当前指针的后继指针指向当前指针</span></span><br><span class="line">                <span class="keyword">break</span>;                  <span class="comment">//注意是否要跳出，跳出只删除符合的第一个数吗，不跳则删除所有符合的数</span></span><br><span class="line">            &#125;</span><br><span class="line">            t=t-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>链表删除</strong></p>
+<p>·同样是要注意头和尾滴</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//删除链表节点</span></span><br><span class="line"><span class="function">struct Listnode* <span class="title">Delete_Listnode</span><span class="params">(struct Listnode *head, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Listnode</span> *<span class="title">t</span>,*<span class="title">p</span>;</span></span><br><span class="line">    t=head;</span><br><span class="line">    <span class="keyword">if</span>(head-&gt;data == x)&#123;       <span class="comment">//头节点删除</span></span><br><span class="line">        p = head-&gt;next;</span><br><span class="line">        head-&gt;data = head-&gt;next-&gt;data;</span><br><span class="line">        head-&gt;next = head-&gt;next-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p);                <span class="comment">//free()释放内存空间</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;                       <span class="comment">//非头节点删除</span></span><br><span class="line">        <span class="keyword">while</span>(t != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(t-&gt;next-&gt;data == x)&#123;</span><br><span class="line">                p = t-&gt;next;</span><br><span class="line">                t-&gt;next = p-&gt;next;</span><br><span class="line">               <span class="built_in">free</span>(p);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            t = t-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>链表打印</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//打印链表</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Print_Listnode</span><span class="params">(struct Listnode *head)</span></span>&#123;</span><br><span class="line">    Listnode *t;</span><br><span class="line">    t = head;</span><br><span class="line">    <span class="keyword">if</span>(t == <span class="literal">NULL</span>)       <span class="comment">//判断链表为空</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;!链表为空!&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span>&#123;               <span class="comment">//顺序打印链表</span></span><br><span class="line">        <span class="keyword">while</span>(t != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,t-&gt;data);</span><br><span class="line">            t = t-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<hr>
+<p>以上就是涉及到链表的所有操作，包括创建、排序、插入、删除、打印等，了解链表的思想，主要是要注意表头，表中和表位，以及地址的指向。emmmm,其实c++，Java应该是用面向对象的写法来写。什么，你没有对象，new一个就好了 //滑稽</p>
+<p>完整的代码我就不贴了，略略略(主要是比较长，我都要哭了)</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
 </search>
